@@ -3,13 +3,14 @@ import { Link } from '@saas-ui/react'
 import { NextSeoProps } from 'next-seo'
 import { FaGithub, FaTwitter } from 'react-icons/fa'
 import { FiCheck } from 'react-icons/fi'
+
 import { Logo } from './logo'
 
 const siteConfig = {
   logo: Logo,
   seo: {
-    title: 'Saas UI',
-    description: 'The React component library for startups',
+    title: 'kteccs - career coaching agency',
+    description: 'lunch your career with kteccs',
   } as NextSeoProps,
   termsUrl: '#',
   privacyUrl: '#',
@@ -41,27 +42,26 @@ const siteConfig = {
   footer: {
     copyright: (
       <>
-        Built by{' '}
-        <Link href="https://twitter.com/Pagebakers">Eelco Wiersma</Link>
+        Built by <Link href="mailto:your-email@example.com">Troy</Link>
       </>
     ),
     links: [
       {
-        href: 'mailto:hello@saas-ui.dev',
+        href: 'mailto:your-email@example.com',
         label: 'Contact',
       },
       {
-        href: 'https://twitter.com/saas_js',
+        href: 'https://twitter.com/your-twitter',
         label: <FaTwitter size="14" />,
       },
       {
-        href: 'https://github.com/saas-js/saas-ui',
+        href: 'https://github.com/your-github',
         label: <FaGithub size="14" />,
       },
     ],
   },
   signup: {
-    title: 'Start building with Saas UI',
+    title: 'Start building with us',
     features: [
       {
         icon: FiCheck,

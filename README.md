@@ -1,7 +1,6 @@
-# Saas UI - Next.js - landing page.
+# SaaS Landing Page
 
-This is a free Next.js landing page template based on https://saas-ui.dev.
-Feel free to submit any feature requests. If you use this template please share what you've built [on Twitter](https://twitter.com/saas_js) 🚀.
+A modern, responsive SaaS landing page built with Next.js and Chakra UI. This project provides a clean foundation for building professional SaaS product landing pages.
 
 **[View demo](https://saas-ui-nextjs-landing-page.netlify.app/)**
 
@@ -40,11 +39,7 @@ Configuration files to edit basic site information, add testimonials, faq and pr
 
 ## Learn More
 
-Find out more about Saas UI.
-
-- [Saas UI Documentation](https://saas-ui.dev/docs).
-
-To learn more about Next.js, take a look at the following resources:
+To learn more about the technologies used in this project:
 
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
