@@ -1,3 +1,31 @@
+// import { Container, Flex, FlexProps, Text, VStack } from '@chakra-ui/react'
+// interface HeroProps extends Omit<FlexProps, 'title'> {
+//   title: string | React.ReactNode
+//   description?: string | React.ReactNode
+// }
+// export const Hero = ({ title, description, children, ...rest }: HeroProps) => {
+//   return (
+//     <Flex py="20" alignItems="center" {...rest}>
+//       <Container>
+//         <VStack spacing={[4, null, 8]} alignItems="flex-start">
+//           <Text as="h1" textStyle="h1" textAlign="left">
+//             {title}
+//           </Text>
+//           <Text
+//             as="div"
+//             textStyle="subtitle"
+//             align="left"
+//             color="gray.500"
+//             _dark={{ color: 'gray.400' }}
+//           >
+//             {description}
+//           </Text>
+//         </VStack>
+//         {children}
+//       </Container>
+//     </Flex>
+//   )
+// }
 import {
   Box,
   BoxProps,
@@ -21,12 +49,10 @@ import {
   FiThumbsUp,
 } from 'react-icons/fi'
 
-import globeAnimation from '../../public/static/lottie/Globe.json'
 import { ButtonLink } from '../button-link'
 import { Features } from '../features'
 import { BackgroundGradient } from '../gradients/background-gradient'
 import { ChakraLogo, NextjsLogo } from '../logos'
-import { LottiePlayer } from '../lottie/lottie-player'
 import { FallInPlace } from '../motion/fall-in-place'
 import { Br, Em } from '../typography'
 
@@ -48,20 +74,8 @@ export const Hero = ({
       <BackgroundGradient height="100%" zIndex="-1" />
       <Container maxW="container.xl" pt={{ base: 40, lg: 60 }} pb="40">
         <Stack direction={{ base: 'column', lg: 'row' }} alignItems="center">
-          <Flex
-            py="20"
-            alignItems="center"
-            {...rest}
-            width="100%"
-            px={{ base: 4, md: 0 }} // 🟣 Align text to left edge on small screens
-          >
-            <VStack
-              spacing={[4, null, 8]}
-              alignItems="flex-start"
-              width="100%"
-              pr={{ base: 0, md: 0, lg: '20%' }} // 🟣 Optional: give breathing room from globe on large screens
-              pb={{ base: '280px', md: '0' }} // ✅ Adds space below text on mobile so it doesn't overlap globe
-            >
+          <Flex py="20" alignItems="center" {...rest}>
+            <VStack spacing={[4, null, 8]} alignItems="flex-start">
               <Text as="h1" textStyle="h1" textAlign="left">
                 {title}
               </Text>
@@ -77,135 +91,28 @@ export const Hero = ({
               {children}
             </VStack>
           </Flex>
-
-          {/* <Box
+          <Box
+            height="600px"
             position="absolute"
-            right={200}
-            top={{ base: '100%', md: '50%' }}
-            transform={{ base: 'translateY(0%)', md: 'translateY(-55%)' }}
-            zIndex={0}
-            width="auto"
-            maxW="none"
-            overflow="visible"
-            pointerEvents="none"
+            display={{ base: 'none', lg: 'block' }}
+            left={{ lg: '60%', xl: '55%' }}
+            width="80vw"
+            maxW="1100px"
+            margin="0 auto"
           >
             <FallInPlace delay={1}>
-              <Box
-                width={{
-                  base: '100vw',
-                  md: '70vw',
-                  lg: '60vw',
-                  xl: '55vw',
-                  '2xl': '50vw',
-                }}
-                height="auto"
-              >
-                <LottiePlayer
-                  animationData={globeAnimation}
-                  autoplay
-                  loop
-                  width="100%" // Explicit width (string or number)
-                  height="100%" // Explicit height (string or number)
-                  style={{
-                    width: '200%',
-                    height: '200%',
-                  }}
-                />
+              <Box overflow="hidden" height="100%">
+                {/* <Image
+                  src="/static/screenshots/list.png"
+                  width={1200}
+                  height={762}
+                  alt="Screenshot of a ListPage in Saas UI Pro"
+                  quality="75"
+                  priority
+                /> */}
               </Box>
             </FallInPlace>
-          </Box> */}
-
-          {/* <Box
-            position="absolute"
-            right={{ base: 0, md: 20 }}
-            bottom={{ base: 0, md: 'auto' }}
-            top={{ base: 'auto', md: '50%' }}
-            transform={{ base: 'translateY(0%)', md: 'translateY(-50%)' }}
-            zIndex={0}
-            pointerEvents="none"
-            overflow="hidden"
-          >
-            <FallInPlace delay={1}>
-              <Box
-                width={{
-                  base: '300px',
-                  sm: '350px',
-                  md: '400px',
-                  lg: '500px',
-                  xl: '600px',
-                }}
-                height={{
-                  base: '300px',
-                  sm: '350px',
-                  md: '400px',
-                  lg: '500px',
-                  xl: '600px',
-                }}
-              >
-                <LottiePlayer
-                  animationData={globeAnimation}
-                  autoplay
-                  loop
-                  width="100%"
-                  height="100%"
-                />
-              </Box>
-            </FallInPlace>
-          </Box> */}
-
-          <>
-            {/* Mobile: Lottie in flow */}
-            <Box
-              display={{ base: 'block', md: 'none' }}
-              pt="12"
-              px="4"
-              width="100%"
-              textAlign="center"
-            >
-              <Box
-                mx="auto"
-                width={{ base: '260px', sm: '300px' }}
-                height={{ base: '260px', sm: '300px' }}
-              >
-                <LottiePlayer
-                  animationData={globeAnimation}
-                  autoplay
-                  loop
-                  width="100%"
-                  height="100%"
-                />
-              </Box>
-            </Box>
-
-            {/* Desktop: Lottie absolutely positioned */}
-            <Box
-              display={{ base: 'none', md: 'block' }}
-              position="absolute"
-              right={200}
-              top="50%"
-              transform="translateY(-55%)"
-              zIndex={0}
-              width="auto"
-              maxW="none"
-              overflow="visible"
-              pointerEvents="none"
-            >
-              <FallInPlace delay={1}>
-                <Box
-                  width={{ md: '70vw', lg: '60vw', xl: '55vw', '2xl': '50vw' }}
-                  height="auto"
-                >
-                  <LottiePlayer
-                    animationData={globeAnimation}
-                    autoplay
-                    loop
-                    width="100%"
-                    height="100%"
-                  />
-                </Box>
-              </FallInPlace>
-            </Box>
-          </>
+          </Box>
         </Stack>
       </Container>
 
