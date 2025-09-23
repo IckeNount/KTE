@@ -76,7 +76,6 @@ export const Hero: React.FC = () => {
                   <SvgIcon name="flight" width="28px" height="28px" />
                   <SvgIcon name="navigation" width="28px" height="28px" />
                   <SvgIcon name="education" width="28px" height="28px" />
-                  <SvgIcon name="factory" width="28px" height="28px" />
                 </HStack>
 
                 <ButtonGroup spacing={4} alignItems="center">
@@ -171,33 +170,34 @@ export const Hero: React.FC = () => {
         pt="20"
         features={[
           {
-            title: 'Accessible',
+            title: 'Global Teaching Placement',
             icon: FiSmile,
-            description: 'All components strictly follow WAI-ARIA standards.',
+            description:
+              'Teaching jobs in Thailand with visa, permits, coaching, and full relocation support.',
             iconPosition: 'left',
             delay: 0.6,
           },
           {
-            title: 'Themable',
+            title: 'International Workforce Deployment',
             icon: FiSliders,
             description:
-              'Fully customize all components to your brand with theme support and style props.',
+              'Industrial job placements in Poland and Germany with legal, housing, and relocation assistance.',
             iconPosition: 'left',
             delay: 0.8,
           },
           {
-            title: 'Composable',
+            title: 'Travel & Visa Solutions',
             icon: FiGrid,
             description:
-              'Compose components to fit your needs and mix them together to create new ones.',
+              'Visa services and travel support for Europe, Korea, Dubai, and custom tour packages.',
             iconPosition: 'left',
             delay: 1,
           },
           {
-            title: 'Productive',
+            title: 'Human-Centered Support',
             icon: FiThumbsUp,
             description:
-              'Designed to reduce boilerplate and fully typed, build your product at speed.',
+              'Emergency financial help and lifelong mentorship focused on teacher well-being and growth.',
             iconPosition: 'left',
             delay: 1.1,
           },
