@@ -393,7 +393,7 @@ export default function BusinessCategories() {
                   }}
                 >
                   <Image
-                    src="/static/glow-planet/logo-01.svg"
+                    src="/static/glow-planet/TH.svg"
                     width={32}
                     height={32}
                     alt="Logo 01"
@@ -448,7 +448,7 @@ export default function BusinessCategories() {
                       }}
                     >
                       <Image
-                        src="/static/glow-planet/logo-02.svg"
+                        src="/static/glow-planet/PH.svg"
                         width={23}
                         height={22}
                         alt="Logo 02"
@@ -488,7 +488,7 @@ export default function BusinessCategories() {
                       }}
                     >
                       <Image
-                        src="/static/glow-planet/logo-03.svg"
+                        src="/static/glow-planet/KR.svg"
                         width={22}
                         height={22}
                         alt="Logo 03"
@@ -528,7 +528,7 @@ export default function BusinessCategories() {
                       }}
                     >
                       <Image
-                        src="/static/glow-planet/logo-04.svg"
+                        src="/static/glow-planet/GM.svg"
                         width={24}
                         height={22}
                         alt="Logo 04"
@@ -568,7 +568,7 @@ export default function BusinessCategories() {
                       }}
                     >
                       <Image
-                        src="/static/glow-planet/logo-05.svg"
+                        src="/static/glow-planet/DB.svg"
                         width={25}
                         height={25}
                         alt="Logo 05"
@@ -648,7 +648,7 @@ export default function BusinessCategories() {
                       }}
                     >
                       <Image
-                        src="/static/glow-planet/logo-07.svg"
+                        src="/static/glow-planet/PO.svg"
                         width={25}
                         height={25}
                         alt="Logo 07"

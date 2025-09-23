@@ -88,126 +88,56 @@ const Home: NextPage = () => {
 
 const HeroSection: React.FC = () => {
   return (
-    <Box position="relative" overflow="hidden">
-      <BackgroundGradient height="100%" zIndex="-1" />
-      <Container maxW="container.xl" pt={{ base: 40, lg: 60 }} pb="40">
-        <Stack direction={{ base: 'column', lg: 'row' }} alignItems="center">
-          <Hero
-            id="home"
-            justifyContent="flex-start"
-            px="0"
-            title={
-              <FallInPlace>
-                Build beautiful
-                <Br /> software faster
-              </FallInPlace>
-            }
-            description={
-              <FallInPlace delay={0.4} fontWeight="medium">
-                Saas UI is a <Em>React component library</Em>
-                <Br /> that doesn&apos;t get in your way and helps you <Br />{' '}
-                build intuitive SaaS products with speed.
-              </FallInPlace>
+    <Hero
+      id="home"
+      justifyContent="flex-start"
+      px="0"
+      showFeatures={true}
+      title={
+        <FallInPlace>
+          Build beautiful
+          <Br /> software faster
+        </FallInPlace>
+      }
+      description={
+        <FallInPlace delay={0.4} fontWeight="medium">
+          Saas UI is a <Em>React component library</Em>
+          <Br /> that doesn&apos;t get in your way and helps you <Br /> build
+          intuitive SaaS products with speed.
+        </FallInPlace>
+      }
+    >
+      <FallInPlace delay={0.8}>
+        <HStack pt="4" pb="12" spacing="8">
+          <NextjsLogo height="28px" /> <ChakraLogo height="20px" />
+        </HStack>
+
+        <ButtonGroup spacing={4} alignItems="center">
+          <ButtonLink colorScheme="primary" size="lg" href="/signup">
+            Sign Up
+          </ButtonLink>
+          <ButtonLink
+            size="lg"
+            href="https://demo.saas-ui.dev"
+            variant="outline"
+            rightIcon={
+              <Icon
+                as={FiArrowRight}
+                sx={{
+                  transitionProperty: 'common',
+                  transitionDuration: 'normal',
+                  '.chakra-button:hover &': {
+                    transform: 'translate(5px)',
+                  },
+                }}
+              />
             }
           >
-            <FallInPlace delay={0.8}>
-              <HStack pt="4" pb="12" spacing="8">
-                <NextjsLogo height="28px" /> <ChakraLogo height="20px" />
-              </HStack>
-
-              <ButtonGroup spacing={4} alignItems="center">
-                <ButtonLink colorScheme="primary" size="lg" href="/signup">
-                  Sign Up
-                </ButtonLink>
-                <ButtonLink
-                  size="lg"
-                  href="https://demo.saas-ui.dev"
-                  variant="outline"
-                  rightIcon={
-                    <Icon
-                      as={FiArrowRight}
-                      sx={{
-                        transitionProperty: 'common',
-                        transitionDuration: 'normal',
-                        '.chakra-button:hover &': {
-                          transform: 'translate(5px)',
-                        },
-                      }}
-                    />
-                  }
-                >
-                  View demo
-                </ButtonLink>
-              </ButtonGroup>
-            </FallInPlace>
-          </Hero>
-          <Box
-            height="600px"
-            position="absolute"
-            display={{ base: 'none', lg: 'block' }}
-            left={{ lg: '60%', xl: '55%' }}
-            width="80vw"
-            maxW="1100px"
-            margin="0 auto"
-          >
-            <FallInPlace delay={1}>
-              <Box overflow="hidden" height="100%">
-                <Image
-                  src="/static/screenshots/list.png"
-                  width={1200}
-                  height={762}
-                  alt="Screenshot of a ListPage in Saas UI Pro"
-                  quality="75"
-                  priority
-                />
-              </Box>
-            </FallInPlace>
-          </Box>
-        </Stack>
-      </Container>
-
-      <Features
-        id="benefits"
-        columns={[1, 2, 4]}
-        iconSize={4}
-        innerWidth="container.xl"
-        pt="20"
-        features={[
-          {
-            title: 'Accessible',
-            icon: FiSmile,
-            description: 'All components strictly follow WAI-ARIA standards.',
-            iconPosition: 'left',
-            delay: 0.6,
-          },
-          {
-            title: 'Themable',
-            icon: FiSliders,
-            description:
-              'Fully customize all components to your brand with theme support and style props.',
-            iconPosition: 'left',
-            delay: 0.8,
-          },
-          {
-            title: 'Composable',
-            icon: FiGrid,
-            description:
-              'Compose components to fit your needs and mix them together to create new ones.',
-            iconPosition: 'left',
-            delay: 1,
-          },
-          {
-            title: 'Productive',
-            icon: FiThumbsUp,
-            description:
-              'Designed to reduce boilerplate and fully typed, build your product at speed.',
-            iconPosition: 'left',
-            delay: 1.1,
-          },
-        ]}
-        reveal={FallInPlace}
-      />
-    </Box>
+            View demo
+          </ButtonLink>
+        </ButtonGroup>
+      </FallInPlace>
+    </Hero>
   )
 }
 

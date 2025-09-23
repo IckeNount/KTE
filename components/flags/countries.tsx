@@ -2,11 +2,11 @@
 'use client'
 
 import { Box, Center, Flex, Grid, Heading, Icon, Text } from '@chakra-ui/react'
+import { keyframes } from '@emotion/react'
 import Image from 'next/image'
 
 import { ReactElement } from 'react'
 
-import PlanetOverlayImg from '../../public/static/glow-planet/planet-overlay.svg'
 import PlanetTagImg01 from '../../public/static/glow-planet/planet-tag-01.png'
 import PlanetTagImg02 from '../../public/static/glow-planet/planet-tag-02.png'
 import PlanetTagImg03 from '../../public/static/glow-planet/planet-tag-03.png'
@@ -18,6 +18,18 @@ import PlanetImg from '../../public/static/glow-planet/planet.png'
 // app/components/CountriesFlag.tsx
 
 // app/components/CountriesFlag.tsx
+
+// app/components/CountriesFlag.tsx
+
+// app/components/CountriesFlag.tsx
+
+// app/components/CountriesFlag.tsx
+
+// Float animation keyframe
+const float = keyframes`
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+`
 
 // app/components/CountriesFlag.tsx
 
@@ -144,74 +156,79 @@ export default function CountriesFlag() {
 
                 <Box pointerEvents="none" position="relative">
                   <Image
-                    src={PlanetOverlayImg}
+                    src="/static/glow-planet/planet-overlay.svg"
                     alt="Planet decoration"
                     width={789}
                     height={755}
                     style={{
                       position: 'absolute',
-                      right: '-16rem',
-                      top: '-5rem',
-                      zIndex: 10,
+                      left: '50%',
+                      top: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      zIndex: 1,
                     }}
                   />
                   {/* Floating Tags */}
-                  <Image
-                    src={PlanetTagImg01}
-                    alt="Tag 01"
-                    width={253}
-                    height={56}
-                    style={{
-                      position: 'absolute',
-                      left: '-7rem',
-                      top: '4rem',
-                      zIndex: 10,
-                      opacity: 0.8,
-                      animation: 'float 4s ease-in-out infinite',
-                    }}
-                  />
-                  <Image
-                    src={PlanetTagImg02}
-                    alt="Tag 02"
-                    width={241}
-                    height={56}
-                    style={{
-                      position: 'absolute',
-                      left: '14rem',
-                      top: '1.75rem',
-                      zIndex: 10,
-                      opacity: 0.3,
-                      animation: 'float 4s ease-in-out infinite 1s',
-                    }}
-                  />
-                  <Image
-                    src={PlanetTagImg03}
-                    alt="Tag 03"
-                    width={243}
-                    height={56}
-                    style={{
-                      position: 'absolute',
-                      left: '-5rem',
-                      bottom: '6rem',
-                      zIndex: 10,
-                      opacity: 0.25,
-                      animation: 'float 4s ease-in-out infinite 2s',
-                    }}
-                  />
-                  <Image
-                    src={PlanetTagImg04}
-                    alt="Tag 04"
-                    width={251}
-                    height={56}
-                    style={{
-                      position: 'absolute',
-                      left: '16rem',
-                      bottom: '8rem',
-                      zIndex: 10,
-                      opacity: 0.8,
-                      animation: 'float 4s ease-in-out infinite 3s',
-                    }}
-                  />
+                  <Box
+                    position="absolute"
+                    left="-7rem"
+                    top="4rem"
+                    zIndex={10}
+                    opacity={0.8}
+                    animation={`${float} 4s ease-in-out infinite`}
+                  >
+                    <Image
+                      src={PlanetTagImg01}
+                      alt="Tag 01"
+                      width={253}
+                      height={56}
+                    />
+                  </Box>
+                  <Box
+                    position="absolute"
+                    left="14rem"
+                    top="1.75rem"
+                    zIndex={10}
+                    opacity={0.3}
+                    animation={`${float} 4s ease-in-out infinite 1s`}
+                  >
+                    <Image
+                      src={PlanetTagImg02}
+                      alt="Tag 02"
+                      width={241}
+                      height={56}
+                    />
+                  </Box>
+                  <Box
+                    position="absolute"
+                    left="-5rem"
+                    bottom="6rem"
+                    zIndex={10}
+                    opacity={0.25}
+                    animation={`${float} 4s ease-in-out infinite 2s`}
+                  >
+                    <Image
+                      src={PlanetTagImg03}
+                      alt="Tag 03"
+                      width={243}
+                      height={56}
+                    />
+                  </Box>
+                  <Box
+                    position="absolute"
+                    left="16rem"
+                    bottom="8rem"
+                    zIndex={10}
+                    opacity={0.8}
+                    animation={`${float} 4s ease-in-out infinite 3s`}
+                  >
+                    <Image
+                      src={PlanetTagImg04}
+                      alt="Tag 04"
+                      width={251}
+                      height={56}
+                    />
+                  </Box>
                 </Box>
               </Box>
             </Center>
