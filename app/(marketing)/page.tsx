@@ -53,7 +53,6 @@ import {
   HighlightsItem,
   HighlightsTestimonialItem,
 } from '#components/highlights'
-import { ChakraLogo, NextjsLogo } from '#components/logos'
 import { FallInPlace } from '#components/motion/fall-in-place'
 import { Pricing } from '#components/pricing/pricing'
 import { Testimonial, Testimonials } from '#components/testimonials'
@@ -65,7 +64,7 @@ import testimonials from '#data/testimonials'
 const Home: NextPage = () => {
   return (
     <Box>
-      <HeroSection />
+      <Hero />
 
       <BusinessCategories />
 
@@ -83,61 +82,6 @@ const Home: NextPage = () => {
 
       <FaqSection />
     </Box>
-  )
-}
-
-const HeroSection: React.FC = () => {
-  return (
-    <Hero
-      id="home"
-      justifyContent="flex-start"
-      px="0"
-      showFeatures={true}
-      title={
-        <FallInPlace>
-          Build beautiful
-          <Br /> software faster
-        </FallInPlace>
-      }
-      description={
-        <FallInPlace delay={0.4} fontWeight="medium">
-          Saas UI is a <Em>React component library</Em>
-          <Br /> that doesn&apos;t get in your way and helps you <Br /> build
-          intuitive SaaS products with speed.
-        </FallInPlace>
-      }
-    >
-      <FallInPlace delay={0.8}>
-        <HStack pt="4" pb="12" spacing="8">
-          <NextjsLogo height="28px" /> <ChakraLogo height="20px" />
-        </HStack>
-
-        <ButtonGroup spacing={4} alignItems="center">
-          <ButtonLink colorScheme="primary" size="lg" href="/signup">
-            Sign Up
-          </ButtonLink>
-          <ButtonLink
-            size="lg"
-            href="https://demo.saas-ui.dev"
-            variant="outline"
-            rightIcon={
-              <Icon
-                as={FiArrowRight}
-                sx={{
-                  transitionProperty: 'common',
-                  transitionDuration: 'normal',
-                  '.chakra-button:hover &': {
-                    transform: 'translate(5px)',
-                  },
-                }}
-              />
-            }
-          >
-            View demo
-          </ButtonLink>
-        </ButtonGroup>
-      </FallInPlace>
-    </Hero>
   )
 }
 

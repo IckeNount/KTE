@@ -1,6 +1,6 @@
 'use client'
 
-import { Box, Container, useColorModeValue } from '@chakra-ui/react'
+import { Box, Container } from '@chakra-ui/react'
 import { keyframes } from '@emotion/react'
 import Image from 'next/image'
 
@@ -22,11 +22,17 @@ const lineMove = keyframes`
 `
 
 export default function BusinessCategories() {
-  const bgColor = useColorModeValue('white', 'gray.900')
-  const svgFill = useColorModeValue('#3182CE', '#63B3ED')
+  const svgFill = '#3182CE' // Always blue
+  const gridLineColor = 'gray.200' // Always light gray for white background
+  const blueLineColor = 'blue.500' // Always blue
 
   return (
-    <Box as="section" bg={bgColor}>
+    <Box
+      as="section"
+      bg="white"
+      _dark={{ bg: 'white' }}
+      style={{ backgroundColor: 'white !important' }}
+    >
       <Container maxW="6xl" px={{ base: 4, sm: 6 }}>
         <Box pb={{ base: 12, md: 20 }}>
           {/* Main container */}
@@ -36,9 +42,10 @@ export default function BusinessCategories() {
             h="324px"
             alignItems="center"
             justifyContent="center"
+            overflow="visible"
           >
             {/* Small blue dots pattern */}
-            <Box position="absolute" zIndex={-1}>
+            <Box position="absolute" zIndex={0}>
               <svg
                 width={164}
                 height={41}
@@ -183,7 +190,7 @@ export default function BusinessCategories() {
             </Box>
 
             {/* Blue glow background */}
-            <Box position="absolute" zIndex={-1}>
+            <Box position="absolute" zIndex={0}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width={432}
@@ -232,8 +239,8 @@ export default function BusinessCategories() {
               left={0}
               right={0}
               h="1px"
-              bgGradient="linear(to-r, transparent, gray.200, transparent)"
-              zIndex={-1}
+              bgGradient={`linear(to-r, transparent, ${gridLineColor}, transparent)`}
+              zIndex={1}
               mixBlendMode="multiply"
             />
             <Box
@@ -242,8 +249,8 @@ export default function BusinessCategories() {
               left={0}
               right={0}
               h="1px"
-              bgGradient="linear(to-r, transparent, gray.200, transparent)"
-              zIndex={-1}
+              bgGradient={`linear(to-r, transparent, ${gridLineColor}, transparent)`}
+              zIndex={1}
               mixBlendMode="multiply"
             />
             <Box
@@ -252,9 +259,9 @@ export default function BusinessCategories() {
               left="200px"
               right="200px"
               h="1px"
-              bgGradient="linear(to-r, transparent, blue.500, transparent)"
+              bgGradient={`linear(to-r, transparent, ${blueLineColor}, transparent)`}
               opacity={0.6}
-              zIndex={-1}
+              zIndex={1}
               mixBlendMode="multiply"
             />
 
@@ -266,8 +273,8 @@ export default function BusinessCategories() {
               right={0}
               h="1px"
               transform="translateY(-82px)"
-              bgGradient="linear(to-r, transparent, gray.200, transparent)"
-              zIndex={-1}
+              bgGradient={`linear(to-r, transparent, ${gridLineColor}, transparent)`}
+              zIndex={1}
               mixBlendMode="multiply"
               _before={{
                 content: '""',
@@ -275,7 +282,7 @@ export default function BusinessCategories() {
                 top: 0,
                 bottom: 0,
                 w: '24px',
-                bgGradient: 'linear(to-r, transparent, blue.500, transparent)',
+                bgGradient: `linear(to-r, transparent, ${blueLineColor}, transparent)`,
                 animation: `${lineMove} 10s ease-in-out infinite`,
               }}
             />
@@ -286,8 +293,8 @@ export default function BusinessCategories() {
               right={0}
               h="1px"
               transform="translateY(82px)"
-              bgGradient="linear(to-r, transparent, gray.200, transparent)"
-              zIndex={-1}
+              bgGradient={`linear(to-r, transparent, ${gridLineColor}, transparent)`}
+              zIndex={1}
               mixBlendMode="multiply"
               _before={{
                 content: '""',
@@ -295,7 +302,7 @@ export default function BusinessCategories() {
                 top: 0,
                 bottom: 0,
                 w: '24px',
-                bgGradient: 'linear(to-r, transparent, blue.500, transparent)',
+                bgGradient: `linear(to-r, transparent, ${blueLineColor}, transparent)`,
                 animation: `${lineMove} 10s ease-in-out infinite 5s`,
               }}
             />
@@ -308,8 +315,8 @@ export default function BusinessCategories() {
               top="50%"
               h="1px"
               transform="rotate(20deg)"
-              bgGradient="linear(to-r, transparent, gray.200, transparent)"
-              zIndex={-1}
+              bgGradient={`linear(to-r, transparent, ${gridLineColor}, transparent)`}
+              zIndex={1}
               mixBlendMode="multiply"
             />
             <Box
@@ -319,8 +326,8 @@ export default function BusinessCategories() {
               top="50%"
               h="1px"
               transform="rotate(-20deg)"
-              bgGradient="linear(to-r, transparent, gray.200, transparent)"
-              zIndex={-1}
+              bgGradient={`linear(to-r, transparent, ${gridLineColor}, transparent)`}
+              zIndex={1}
               mixBlendMode="multiply"
             />
 
@@ -332,8 +339,8 @@ export default function BusinessCategories() {
               left="50%"
               w="1px"
               transform="translateX(-216px)"
-              bgGradient="linear(to-b, gray.200, transparent)"
-              zIndex={-1}
+              bgGradient={`linear(to-b, ${gridLineColor}, transparent)`}
+              zIndex={1}
               mixBlendMode="multiply"
             />
             <Box
@@ -343,14 +350,15 @@ export default function BusinessCategories() {
               left="50%"
               w="1px"
               transform="translateX(216px)"
-              bgGradient="linear(to-t, gray.200, transparent)"
-              zIndex={-1}
+              bgGradient={`linear(to-t, ${gridLineColor}, transparent)`}
+              zIndex={1}
               mixBlendMode="multiply"
             />
 
             {/* Central logo with spinning border */}
             <Box
               position="absolute"
+              zIndex={5}
               _before={{
                 content: '""',
                 position: 'absolute',
@@ -359,14 +367,28 @@ export default function BusinessCategories() {
                 right: '-12px',
                 bottom: '-12px',
                 borderRadius: 'full',
-                border: '1px solid transparent',
-                bgGradient: 'conic(from 180deg, transparent, blue.500)',
+                background: `conic-gradient(from 0deg, transparent, ${svgFill}, transparent)`,
                 animation: `${spin} 3s linear infinite`,
-                mask: 'linear-gradient(white 0 0) padding-box, linear-gradient(white 0 0)',
-                maskComposite: 'exclude',
+                padding: '1px',
+                zIndex: 1,
+              }}
+              _after={{
+                content: '""',
+                position: 'absolute',
+                top: '-11px',
+                left: '-11px',
+                right: '-11px',
+                bottom: '-11px',
+                borderRadius: 'full',
+                background: 'white !important',
+                zIndex: 2,
               }}
             >
-              <Box animation={`${breath} 8s ease-in-out infinite`}>
+              <Box
+                animation={`${breath} 8s ease-in-out infinite`}
+                position="relative"
+                zIndex={10}
+              >
                 <Box
                   display="flex"
                   alignItems="center"
@@ -374,37 +396,36 @@ export default function BusinessCategories() {
                   w="96px"
                   h="96px"
                   borderRadius="full"
-                  bg="white"
+                  bg="white !important"
                   boxShadow="lg"
                   position="relative"
-                  _before={{
-                    content: '""',
-                    position: 'absolute',
-                    top: '8.334%',
-                    left: '8.334%',
-                    right: '8.334%',
-                    bottom: '8.334%',
-                    borderRadius: 'inherit',
-                    border: '1px solid',
-                    borderColor: 'blackAlpha.50',
-                    bg: 'gray.200',
-                    opacity: 0.6,
-                    maskImage: 'linear-gradient(to bottom, black, transparent)',
-                  }}
+                  zIndex={10}
+                  overflow="hidden"
                 >
                   <Image
                     src="/static/glow-planet/TH.svg"
-                    width={32}
-                    height={32}
-                    alt="Logo 01"
-                    style={{ position: 'relative', zIndex: 1 }}
+                    width={40}
+                    height={40}
+                    alt="Thailand Flag"
+                    style={{
+                      position: 'relative',
+                      zIndex: 11,
+                      objectFit: 'contain',
+                      display: 'block',
+                    }}
+                    priority
                   />
                 </Box>
               </Box>
             </Box>
 
             {/* Surrounding logos container */}
-            <Box position="relative" display="flex" flexDirection="column">
+            <Box
+              position="relative"
+              display="flex"
+              flexDirection="column"
+              zIndex={5}
+            >
               <Box
                 as="article"
                 display="flex"
@@ -428,24 +449,10 @@ export default function BusinessCategories() {
                       w="64px"
                       h="64px"
                       borderRadius="full"
-                      bg="white"
+                      bg="white !important"
+                      _dark={{ bg: 'white !important' }}
                       boxShadow="lg"
                       position="relative"
-                      _before={{
-                        content: '""',
-                        position: 'absolute',
-                        top: '8.334%',
-                        left: '8.334%',
-                        right: '8.334%',
-                        bottom: '8.334%',
-                        borderRadius: 'inherit',
-                        border: '1px solid',
-                        borderColor: 'blackAlpha.50',
-                        bg: 'gray.200',
-                        opacity: 0.6,
-                        maskImage:
-                          'linear-gradient(to bottom, black, transparent)',
-                      }}
                     >
                       <Image
                         src="/static/glow-planet/PH.svg"
@@ -468,24 +475,10 @@ export default function BusinessCategories() {
                       w="64px"
                       h="64px"
                       borderRadius="full"
-                      bg="white"
+                      bg="white !important"
+                      _dark={{ bg: 'white !important' }}
                       boxShadow="lg"
                       position="relative"
-                      _before={{
-                        content: '""',
-                        position: 'absolute',
-                        top: '8.334%',
-                        left: '8.334%',
-                        right: '8.334%',
-                        bottom: '8.334%',
-                        borderRadius: 'inherit',
-                        border: '1px solid',
-                        borderColor: 'blackAlpha.50',
-                        bg: 'gray.200',
-                        opacity: 0.6,
-                        maskImage:
-                          'linear-gradient(to bottom, black, transparent)',
-                      }}
                     >
                       <Image
                         src="/static/glow-planet/KR.svg"
@@ -508,24 +501,10 @@ export default function BusinessCategories() {
                       w="80px"
                       h="80px"
                       borderRadius="full"
-                      bg="white"
+                      bg="white !important"
+                      _dark={{ bg: 'white !important' }}
                       boxShadow="lg"
                       position="relative"
-                      _before={{
-                        content: '""',
-                        position: 'absolute',
-                        top: '8.334%',
-                        left: '8.334%',
-                        right: '8.334%',
-                        bottom: '8.334%',
-                        borderRadius: 'inherit',
-                        border: '1px solid',
-                        borderColor: 'blackAlpha.50',
-                        bg: 'gray.200',
-                        opacity: 0.6,
-                        maskImage:
-                          'linear-gradient(to bottom, black, transparent)',
-                      }}
                     >
                       <Image
                         src="/static/glow-planet/GM.svg"
@@ -548,24 +527,10 @@ export default function BusinessCategories() {
                       w="80px"
                       h="80px"
                       borderRadius="full"
-                      bg="white"
+                      bg="white !important"
+                      _dark={{ bg: 'white !important' }}
                       boxShadow="lg"
                       position="relative"
-                      _before={{
-                        content: '""',
-                        position: 'absolute',
-                        top: '8.334%',
-                        left: '8.334%',
-                        right: '8.334%',
-                        bottom: '8.334%',
-                        borderRadius: 'inherit',
-                        border: '1px solid',
-                        borderColor: 'blackAlpha.50',
-                        bg: 'gray.200',
-                        opacity: 0.6,
-                        maskImage:
-                          'linear-gradient(to bottom, black, transparent)',
-                      }}
                     >
                       <Image
                         src="/static/glow-planet/DB.svg"
@@ -588,24 +553,10 @@ export default function BusinessCategories() {
                       w="80px"
                       h="80px"
                       borderRadius="full"
-                      bg="white"
+                      bg="white !important"
+                      _dark={{ bg: 'white !important' }}
                       boxShadow="lg"
                       position="relative"
-                      _before={{
-                        content: '""',
-                        position: 'absolute',
-                        top: '8.334%',
-                        left: '8.334%',
-                        right: '8.334%',
-                        bottom: '8.334%',
-                        borderRadius: 'inherit',
-                        border: '1px solid',
-                        borderColor: 'blackAlpha.50',
-                        bg: 'gray.200',
-                        opacity: 0.6,
-                        maskImage:
-                          'linear-gradient(to bottom, black, transparent)',
-                      }}
                     >
                       <Image
                         src="/static/glow-planet/logo-06.svg"
@@ -628,24 +579,10 @@ export default function BusinessCategories() {
                       w="80px"
                       h="80px"
                       borderRadius="full"
-                      bg="white"
+                      bg="white !important"
+                      _dark={{ bg: 'white !important' }}
                       boxShadow="lg"
                       position="relative"
-                      _before={{
-                        content: '""',
-                        position: 'absolute',
-                        top: '8.334%',
-                        left: '8.334%',
-                        right: '8.334%',
-                        bottom: '8.334%',
-                        borderRadius: 'inherit',
-                        border: '1px solid',
-                        borderColor: 'blackAlpha.50',
-                        bg: 'gray.200',
-                        opacity: 0.6,
-                        maskImage:
-                          'linear-gradient(to bottom, black, transparent)',
-                      }}
                     >
                       <Image
                         src="/static/glow-planet/PO.svg"
@@ -675,7 +612,8 @@ export default function BusinessCategories() {
                       border="1px solid"
                       borderColor="gray.200"
                       opacity={0.6}
-                      bg="white"
+                      bg="white !important"
+                      _dark={{ bg: 'white !important' }}
                       boxShadow="lg"
                     >
                       <Image
@@ -705,7 +643,8 @@ export default function BusinessCategories() {
                       border="1px solid"
                       borderColor="gray.200"
                       opacity={0.6}
-                      bg="white"
+                      bg="white !important"
+                      _dark={{ bg: 'white !important' }}
                       boxShadow="lg"
                     >
                       <Image

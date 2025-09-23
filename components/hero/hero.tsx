@@ -1,18 +1,14 @@
 import {
   Box,
-  BoxProps,
   ButtonGroup,
   Container,
   Flex,
-  FlexProps,
   HStack,
   Icon,
   Stack,
   Text,
   VStack,
 } from '@chakra-ui/react'
-import Lottie from 'lottie-react'
-// import Image from 'next/image'
 import {
   FiArrowRight,
   FiGrid,
@@ -25,45 +21,37 @@ import globeAnimation from '../../public/static/lottie/Globe.json'
 import { ButtonLink } from '../button-link'
 import { Features } from '../features'
 import { BackgroundGradient } from '../gradients/background-gradient'
-import { ChakraLogo, NextjsLogo } from '../logos'
+import { SvgIcon } from '../icons'
 import { LottiePlayer } from '../lottie/lottie-player'
 import { FallInPlace } from '../motion/fall-in-place'
 import { Br, Em } from '../typography'
 
-interface HeroProps extends Omit<FlexProps, 'title'> {
-  title: string | React.ReactNode
-  description?: string | React.ReactNode
-  showFeatures?: boolean
-}
-
-export const Hero = ({
-  title,
-  description,
-  children,
-  showFeatures = false,
-  ...rest
-}: HeroProps) => {
+export const Hero: React.FC = () => {
   return (
     <Box position="relative" overflow="hidden">
       <BackgroundGradient height="100%" zIndex="-1" />
       <Container maxW="container.xl" pt={{ base: 40, lg: 60 }} pb="40">
         <Stack direction={{ base: 'column', lg: 'row' }} alignItems="center">
           <Flex
+            id="home"
+            justifyContent="flex-start"
             py="20"
             alignItems="center"
-            {...rest}
             width="100%"
-            px={{ base: 4, md: 0 }} // 🟣 Align text to left edge on small screens
+            px={{ base: 4, md: 0 }}
           >
             <VStack
               spacing={[4, null, 8]}
               alignItems="flex-start"
               width="100%"
-              pr={{ base: 0, md: 0, lg: '20%' }} // 🟣 Optional: give breathing room from globe on large screens
-              pb={{ base: '280px', md: '0' }} // ✅ Adds space below text on mobile so it doesn't overlap globe
+              pr={{ base: 0, md: 0, lg: '20%' }}
+              pb={{ base: '280px', md: '0' }}
             >
               <Text as="h1" textStyle="h1" textAlign="left">
-                {title}
+                <FallInPlace>
+                  Global Careers
+                  <Br /> Fully Supported
+                </FallInPlace>
               </Text>
               <Text
                 as="div"
@@ -72,86 +60,52 @@ export const Hero = ({
                 color="gray.500"
                 _dark={{ color: 'gray.400' }}
               >
-                {description}
+                <FallInPlace delay={0.4} fontWeight="medium">
+                  We <Em>connect</Em> you to jobs in
+                  <Br />
+                  Thailand, Europe, and Asia
+                  <Br /> with <Em>full support</Em> on
+                  <Br />
+                  visas, placement, coaching, and relocation.
+                </FallInPlace>
               </Text>
-              {children}
+
+              <FallInPlace delay={0.8}>
+                <HStack pt="2" pb="8" spacing="8">
+                  <SvgIcon name="handshake" width="28px" height="28px" />
+                  <SvgIcon name="flight" width="28px" height="28px" />
+                  <SvgIcon name="navigation" width="28px" height="28px" />
+                  <SvgIcon name="education" width="28px" height="28px" />
+                  <SvgIcon name="factory" width="28px" height="28px" />
+                </HStack>
+
+                <ButtonGroup spacing={4} alignItems="center">
+                  <ButtonLink colorScheme="primary" size="lg" href="/signup">
+                    Our Services
+                  </ButtonLink>
+                  <ButtonLink
+                    size="lg"
+                    href="https://demo.saas-ui.dev"
+                    variant="outline"
+                    rightIcon={
+                      <Icon
+                        as={FiArrowRight}
+                        sx={{
+                          transitionProperty: 'common',
+                          transitionDuration: 'normal',
+                          '.chakra-button:hover &': {
+                            transform: 'translate(5px)',
+                          },
+                        }}
+                      />
+                    }
+                  >
+                    Apply Now
+                  </ButtonLink>
+                </ButtonGroup>
+              </FallInPlace>
             </VStack>
           </Flex>
-
-          {/* <Box
-            position="absolute"
-            right={200}
-            top={{ base: '100%', md: '50%' }}
-            transform={{ base: 'translateY(0%)', md: 'translateY(-55%)' }}
-            zIndex={0}
-            width="auto"
-            maxW="none"
-            overflow="visible"
-            pointerEvents="none"
-          >
-            <FallInPlace delay={1}>
-              <Box
-                width={{
-                  base: '100vw',
-                  md: '70vw',
-                  lg: '60vw',
-                  xl: '55vw',
-                  '2xl': '50vw',
-                }}
-                height="auto"
-              >
-                <LottiePlayer
-                  animationData={globeAnimation}
-                  autoplay
-                  loop
-                  width="100%" // Explicit width (string or number)
-                  height="100%" // Explicit height (string or number)
-                  style={{
-                    width: '200%',
-                    height: '200%',
-                  }}
-                />
-              </Box>
-            </FallInPlace>
-          </Box> */}
-
-          {/* <Box
-            position="absolute"
-            right={{ base: 0, md: 20 }}
-            bottom={{ base: 0, md: 'auto' }}
-            top={{ base: 'auto', md: '50%' }}
-            transform={{ base: 'translateY(0%)', md: 'translateY(-50%)' }}
-            zIndex={0}
-            pointerEvents="none"
-            overflow="hidden"
-          >
-            <FallInPlace delay={1}>
-              <Box
-                width={{
-                  base: '300px',
-                  sm: '350px',
-                  md: '400px',
-                  lg: '500px',
-                  xl: '600px',
-                }}
-                height={{
-                  base: '300px',
-                  sm: '350px',
-                  md: '400px',
-                  lg: '500px',
-                  xl: '600px',
-                }}
-              >
-                <LottiePlayer
-                  animationData={globeAnimation}
-                  autoplay
-                  loop
-                  width="100%"
-                  height="100%"
-                />
-              </Box>
-            </FallInPlace>
-          </Box> */}
 
           <>
             {/* Mobile: Lottie in flow */}
@@ -209,105 +163,47 @@ export const Hero = ({
         </Stack>
       </Container>
 
-      {showFeatures && (
-        <Features
-          id="benefits"
-          columns={[1, 2, 4]}
-          iconSize={4}
-          innerWidth="container.xl"
-          pt="20"
-          features={[
-            {
-              title: 'Accessible',
-              icon: FiSmile,
-              description: 'All components strictly follow WAI-ARIA standards.',
-              iconPosition: 'left',
-              delay: 0.6,
-            },
-            {
-              title: 'Themable',
-              icon: FiSliders,
-              description:
-                'Fully customize all components to your brand with theme support and style props.',
-              iconPosition: 'left',
-              delay: 0.8,
-            },
-            {
-              title: 'Composable',
-              icon: FiGrid,
-              description:
-                'Compose components to fit your needs and mix them together to create new ones.',
-              iconPosition: 'left',
-              delay: 1,
-            },
-            {
-              title: 'Productive',
-              icon: FiThumbsUp,
-              description:
-                'Designed to reduce boilerplate and fully typed, build your product at speed.',
-              iconPosition: 'left',
-              delay: 1.1,
-            },
-          ]}
-          reveal={FallInPlace}
-        />
-      )}
+      <Features
+        id="benefits"
+        columns={[1, 2, 4]}
+        iconSize={4}
+        innerWidth="container.xl"
+        pt="20"
+        features={[
+          {
+            title: 'Accessible',
+            icon: FiSmile,
+            description: 'All components strictly follow WAI-ARIA standards.',
+            iconPosition: 'left',
+            delay: 0.6,
+          },
+          {
+            title: 'Themable',
+            icon: FiSliders,
+            description:
+              'Fully customize all components to your brand with theme support and style props.',
+            iconPosition: 'left',
+            delay: 0.8,
+          },
+          {
+            title: 'Composable',
+            icon: FiGrid,
+            description:
+              'Compose components to fit your needs and mix them together to create new ones.',
+            iconPosition: 'left',
+            delay: 1,
+          },
+          {
+            title: 'Productive',
+            icon: FiThumbsUp,
+            description:
+              'Designed to reduce boilerplate and fully typed, build your product at speed.',
+            iconPosition: 'left',
+            delay: 1.1,
+          },
+        ]}
+        reveal={FallInPlace}
+      />
     </Box>
-  )
-}
-
-// Export a pre-configured Hero for the home page
-export const HeroSection: React.FC = () => {
-  return (
-    <Hero
-      id="home"
-      justifyContent="flex-start"
-      px="0"
-      showFeatures={true}
-      title={
-        <FallInPlace>
-          Build beautiful
-          <Br /> software faster
-        </FallInPlace>
-      }
-      description={
-        <FallInPlace delay={0.4} fontWeight="medium">
-          Saas UI is a <Em>React component library</Em>
-          <Br /> that doesn&apos;t get in your way and helps you <Br /> build
-          intuitive SaaS products with speed.
-        </FallInPlace>
-      }
-    >
-      <FallInPlace delay={0.8}>
-        <HStack pt="4" pb="12" spacing="8">
-          <NextjsLogo height="28px" /> <ChakraLogo height="20px" />
-        </HStack>
-
-        <ButtonGroup spacing={4} alignItems="center">
-          <ButtonLink colorScheme="primary" size="lg" href="/signup">
-            Sign Up
-          </ButtonLink>
-          <ButtonLink
-            size="lg"
-            href="https://demo.saas-ui.dev"
-            variant="outline"
-            rightIcon={
-              <Icon
-                as={FiArrowRight}
-                sx={{
-                  transitionProperty: 'common',
-                  transitionDuration: 'normal',
-                  '.chakra-button:hover &': {
-                    transform: 'translate(5px)',
-                  },
-                }}
-              />
-            }
-          >
-            View demo
-          </ButtonLink>
-        </ButtonGroup>
-      </FallInPlace>
-    </Hero>
   )
 }
