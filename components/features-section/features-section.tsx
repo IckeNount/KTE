@@ -27,16 +27,14 @@ export const FeaturesSection = () => {
           textAlign="left"
           as="p"
         >
-          Not your standard
-          <Br /> dashboard template.
+          Why People Choose Us
         </Heading>
       }
       description={
         <>
-          Saas UI Pro includes everything you need to build modern frontends.
-          <Br />
-          Use it as a template for your next product or foundation for your
-          design system.
+          We don&apos;t just place you. <Br />
+          We support, guide, and stay with you through every step of your
+          journey abroad.
         </>
       }
       align="left"
@@ -44,71 +42,66 @@ export const FeaturesSection = () => {
       iconSize={4}
       features={[
         {
-          title: '#components.',
+          title: 'Real Human Support.',
           icon: FiBox,
           description:
-            'All premium components are available on a private NPM registery, no more copy pasting and always up-to-date.',
+            'Every application is handled by a real person who listens, guides, and responds personally.',
           variant: 'inline',
         },
         {
-          title: 'Starterkits.',
+          title: 'Application Review.',
           icon: FiLock,
           description:
-            'Example apps in Next.JS, Electron. Including authentication, billing, example pages, everything you need to get started FAST.',
+            'We review your background carefully to match you with the right opportunity and path.',
           variant: 'inline',
         },
         {
-          title: 'Documentation.',
+          title: 'Career Planning Call.',
           icon: FiSearch,
           description:
-            'Extensively documented, including storybooks, best practices, use-cases and examples.',
+            'Get a one-on-one call to align your goals with the right role and destination.',
           variant: 'inline',
         },
         {
-          title: 'Onboarding.',
+          title: 'School Partner List.',
           icon: FiUserPlus,
           description:
-            'Add user onboarding flows, like tours, hints and inline documentation without breaking a sweat.',
+            'Access verified schools and employers with strong reputations and reliable placement histories.',
           variant: 'inline',
         },
         {
-          title: 'Feature flags.',
+          title: 'Referral Rewards.',
           icon: FiFlag,
           description:
-            "Implement feature toggles for your billing plans with easy to use hooks. Connect Flagsmith, or other remote config services once you're ready.",
+            "Refer friends and get travel perks, priority placement, or other exclusive benefits when they're hired.",
           variant: 'inline',
         },
         {
-          title: 'Upselling.',
+          title: 'Local Expertise.',
           icon: FiTrendingUp,
           description:
-            '#components and hooks for upgrade flows designed to make upgrading inside your app frictionless.',
+            'Our team lives where we work and understands the systems, culture, and legal process.',
           variant: 'inline',
         },
         {
-          title: 'Themes.',
+          title: 'Long-Term Care.',
           icon: FiToggleLeft,
           description:
-            'Includes multiple themes with darkmode support, always have the perfect starting point for your next project.',
+            'After placement support with guidance, and access to our growing community.',
           variant: 'inline',
         },
         {
-          title: 'Generators.',
+          title: 'Bridge Loans.',
           icon: FiTerminal,
           description:
-            'Extend your design system while maintaininig code quality and consistency with built-in generators.',
+            'Quiet financial help is available for emergencies, handled privately with zero pressure or judgment.',
           variant: 'inline',
         },
         {
-          title: 'Monorepo.',
+          title: 'Trusted Reputation.',
           icon: FiCode,
-          description: (
-            <>
-              All code is available as packages in a high-performance{' '}
-              <Link href="https://turborepo.com">Turborepo</Link>, you have full
-              control to modify and adjust it to your workflow.
-            </>
-          ),
+          description:
+            'We combine care, professionalism, and real results that speak for themselves.',
           variant: 'inline',
         },
       ]}
