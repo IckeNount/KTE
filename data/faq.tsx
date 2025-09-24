@@ -5,7 +5,7 @@ const faq = {
   // description: '',
   items: [
     {
-      q: 'How many products can I use Saas UI Pro for?',
+      q: 'Do I need teaching experience to apply?',
       a: (
         <>
           The single license can be used for one commercial application or SaaS

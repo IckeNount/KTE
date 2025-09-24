@@ -6,166 +6,98 @@ export default {
     'Our services cover every stage of your journey, including job placement, legal documentation, relocation, and long-term support.',
   plans: [
     {
-      id: 'oss',
-      title: 'Global Teaching Placement',
-      subtitle: 'We match international teachers with schools across Thailand.',
+      id: 'gtp',
+      title: 'Global Teaching Careers in Thailand',
+      tags: [
+        'teaching placement',
+        'visa assistance',
+        'work permits',
+        'housing help',
+        'teacher coaching',
+        'Thailand schools',
+      ],
       description:
-        'Our process includes job matching based on expertise, visa and work permit processing, license application assistance, and relocation help. We also offer free coaching for first-time teachers, ensuring you’re classroom-ready before day one.',
-      price: 'Start Teaching in Thailand With Full Support',
+        'We connect teachers from around the world with rewarding jobs in schools across Thailand. Beyond placement, we make sure you’re fully supported in starting your teaching career abroad with confidence.',
+      price: 'Start Your Teaching Journey With Confidence',
       features: [
         {
-          title: 'Teaching job placement',
+          title: 'Guaranteed teaching job placement',
         },
         {
-          title: 'Visa, work permit, and teaching license',
+          title: 'Visa, work permit, and teaching license assistance',
         },
         {
-          title: 'Housing assistance',
+          title: 'Airport pickup, housing, and relocation support',
         },
         {
-          title: 'Pre-departure coaching',
+          title: 'Free coaching for first-time international teachers',
         },
         {
-          title: 'Ongoing community support',
+          title: 'Ongoing mentorship & supportive teacher community',
         },
       ],
-      action: {
-        href: '#',
-      },
     },
     {
-      id: 'bootstrap',
-      title: 'Industry Workforce Deployment',
-      subtitle:
-        'We place skilled and general factory workers in legal, stable jobs in Poland and Germany.',
+      id: 'iwd',
+      title: 'Skilled Work Opportunities in Europe',
+      tags: [
+        'factory work',
+        'industrial jobs',
+        'Poland placement',
+        'Germany placement',
+        'legal documentation',
+        'relocation support',
+      ],
       description:
-        'From machine operators to warehouse staff, we work with certified employers and assist with all legal processes. Every placement comes with relocation support, housing arrangements, and local guidance after arrival.',
-      price: 'Free',
+        'We help professionals and workers secure stable, certified jobs in Poland and Germany. With complete documentation and relocation assistance, we make your move to Europe smooth and stress-free.',
+      price: 'Your Gateway to European Careers',
       isRecommended: true,
       features: [
         {
-          title: 'Industrial job matching',
+          title: 'Verified industrial job placements',
         },
         {
-          title: 'Visa and legal documentation',
+          title: 'Full visa and legal documentation support',
         },
         {
-          title: 'Housing coordination',
+          title: 'Housing and relocation coordination',
         },
         {
-          title: 'Travel booking support',
+          title: 'Flight and travel booking support',
         },
         {
-          title: 'Post-arrival orientation',
+          title: 'Post-arrival orientation for quick integration',
         },
       ],
-      action: {
-        href: 'https://appulse.gumroad.com/l/saas-ui-pro-pre-order?variant=Single%20license',
-      },
     },
     {
-      id: 'startup',
-      title: 'Travel & Tourist Visa Support',
-      subtitle:
-        'We simplify international travel to destinations like Korea, Dubai, and across Europe.',
+      id: 'tvs',
+      title: 'Travel & Visa Solutions Worldwide',
+      tags: [
+        'visa consultation',
+        'Korea travel',
+        'Dubai tours',
+        'Europe travel',
+        'schengen visa',
+        'travel packages',
+      ],
       description:
-        'Whether it’s a short vacation or long-stay tourism, we guide you through the visa application, help plan flights and accommodation, and even provide custom travel packages based on your goals.',
-      price: 'aweawe',
+        'KTECCS also provides travel and visa services to make global mobility easier, whether you’re planning a vacation, a short-term work trip, or extended stays abroad.',
+      price: 'Travel the World, Hassle-Free',
       features: [
         {
-          title: 'Tourist visa processing',
+          title: 'Tourist visa processing for major destinations',
         },
         {
-          title: 'Schengen visa assistance',
+          title: 'Schengen visa assistance (Europe)',
         },
         {
-          title: 'Korea and Dubai tour support',
+          title: 'Korea & Dubai travel and tour packages',
         },
         {
-          title: 'Flights and hotel booking',
+          title: 'Complete flight and hotel booking services',
         },
       ],
-      action: {
-        href: 'https://appulse.gumroad.com/l/saas-ui-pro-pre-order?variant=Unlimited%20license',
-      },
-    },
-    {
-      id: 'startup',
-      title: 'Travel & Tourist Visa Support',
-      subtitle:
-        'We simplify international travel to destinations like Korea, Dubai, and across Europe.',
-      description:
-        'Whether it’s a short vacation or long-stay tourism, we guide you through the visa application, help plan flights and accommodation, and even provide custom travel packages based on your goals.',
-      price: 'aweawe',
-      features: [
-        {
-          title: 'Tourist visa processing',
-        },
-        {
-          title: 'Schengen visa assistance',
-        },
-        {
-          title: 'Korea and Dubai tour support',
-        },
-        {
-          title: 'Flights and hotel booking',
-        },
-      ],
-      action: {
-        href: 'https://appulse.gumroad.com/l/saas-ui-pro-pre-order?variant=Unlimited%20license',
-      },
-    },
-    {
-      id: 'startup',
-      title: 'Travel & Tourist Visa Support',
-      subtitle:
-        'We simplify international travel to destinations like Korea, Dubai, and across Europe.',
-      description:
-        'Whether it’s a short vacation or long-stay tourism, we guide you through the visa application, help plan flights and accommodation, and even provide custom travel packages based on your goals.',
-      price: 'aweawe',
-      features: [
-        {
-          title: 'Tourist visa processing',
-        },
-        {
-          title: 'Schengen visa assistance',
-        },
-        {
-          title: 'Korea and Dubai tour support',
-        },
-        {
-          title: 'Flights and hotel booking',
-        },
-      ],
-      action: {
-        href: 'https://appulse.gumroad.com/l/saas-ui-pro-pre-order?variant=Unlimited%20license',
-      },
-    },
-    {
-      id: 'startup',
-      title: 'Travel & Tourist Visa Support',
-      subtitle:
-        'We simplify international travel to destinations like Korea, Dubai, and across Europe.',
-      description:
-        'Whether it’s a short vacation or long-stay tourism, we guide you through the visa application, help plan flights and accommodation, and even provide custom travel packages based on your goals.',
-      price: 'aweawe',
-      features: [
-        {
-          title: 'Tourist visa processing',
-        },
-        {
-          title: 'Schengen visa assistance',
-        },
-        {
-          title: 'Korea and Dubai tour support',
-        },
-        {
-          title: 'Flights and hotel booking',
-        },
-      ],
-      action: {
-        href: 'https://appulse.gumroad.com/l/saas-ui-pro-pre-order?variant=Unlimited%20license',
-      },
     },
   ],
 }

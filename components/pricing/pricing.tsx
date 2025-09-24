@@ -6,32 +6,30 @@ import {
   Icon,
   SimpleGrid,
   StackProps,
+  Tag,
   Text,
   VStack,
+  Wrap,
 } from '@chakra-ui/react'
 import { FiCheck } from 'react-icons/fi'
 
 import React, { useState } from 'react'
 
-import {
-  ButtonLink,
-  ButtonLinkProps,
-} from '#components/button-link/button-link'
 import { BackgroundGradient } from '#components/gradients/background-gradient'
 import { Section, SectionProps, SectionTitle } from '#components/section'
 
 export interface PricingPlan {
   id: string
   title: React.ReactNode
-  subtitle?: React.ReactNode
+  tags?: string[]
   description: React.ReactNode
   price: React.ReactNode
   features: Array<PricingFeatureProps | null>
-  action: ButtonLinkProps & { label?: string }
   isRecommended?: boolean
 }
 
-export interface PricingProps extends SectionProps {
+export interface PricingProps extends Omit<SectionProps, 'children'> {
+  children?: React.ReactNode
   description: React.ReactNode
   plans: Array<PricingPlan>
 }
@@ -50,7 +48,7 @@ export const Pricing: React.FC<PricingProps> = (props) => {
             <PricingBox
               key={plan.id}
               title={plan.title}
-              subtitle={plan.subtitle}
+              tags={plan.tags}
               description={plan.description}
               price={plan.price}
               sx={
@@ -74,9 +72,6 @@ export const Pricing: React.FC<PricingProps> = (props) => {
                   ),
                 )}
               </PricingFeatures>
-              <ButtonLink colorScheme="primary" {...plan.action}>
-                {plan.action.label || 'Sign Up'}
-              </ButtonLink>
             </PricingBox>
           ))}
         </SimpleGrid>
@@ -166,13 +161,13 @@ const CollapsibleDescription: React.FC<CollapsibleDescriptionProps> = ({
 
 export interface PricingBoxProps extends Omit<StackProps, 'title'> {
   title: React.ReactNode
-  subtitle?: React.ReactNode
+  tags?: string[]
   description: React.ReactNode
   price: React.ReactNode
 }
 
 const PricingBox: React.FC<PricingBoxProps> = (props) => {
-  const { title, subtitle, description, price, children, ...rest } = props
+  const { title, tags, description, price, children, ...rest } = props
   return (
     <VStack
       zIndex="2"
@@ -192,15 +187,21 @@ const PricingBox: React.FC<PricingBoxProps> = (props) => {
       <Heading as="h3" size="md" fontWeight="bold" fontSize="lg" mb="2">
         {title}
       </Heading>
-      {subtitle && (
-        <Text
-          fontSize="sm"
-          color="gray.600"
-          _dark={{ color: 'gray.400' }}
-          mb="2"
-        >
-          {subtitle}
-        </Text>
+      {tags && (
+        <Wrap mt="2" mb="2">
+          {tags.map((tag) => (
+            <Tag
+              key={tag}
+              variant="subtle"
+              colorScheme="purple"
+              rounded="full"
+              px="3"
+              size="sm"
+            >
+              {tag}
+            </Tag>
+          ))}
+        </Wrap>
       )}
       <CollapsibleDescription description={description} />
       <Box fontSize="2xl" fontWeight="bold" py="4">

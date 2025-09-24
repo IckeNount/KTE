@@ -1,20 +1,20 @@
-import * as React from 'react'
 import {
   Box,
-  Stack,
-  VStack,
-  SimpleGrid,
-  Heading,
-  Text,
-  Icon,
   Circle,
+  Heading,
+  Icon,
   ResponsiveValue,
-  useMultiStyleConfig,
-  ThemingProps,
+  SimpleGrid,
+  Stack,
   SystemProps,
+  Text,
+  ThemingProps,
+  VStack,
+  useMultiStyleConfig,
 } from '@chakra-ui/react'
-
 import { Section, SectionTitle, SectionTitleProps } from 'components/section'
+
+import * as React from 'react'
 
 const Revealer = ({ children }: any) => {
   return children

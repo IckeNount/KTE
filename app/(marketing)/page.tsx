@@ -2,6 +2,7 @@
 
 import { Box, Stack, Text } from '@chakra-ui/react'
 import type { NextPage } from 'next'
+
 import * as React from 'react'
 
 import { BusinessCategories } from '#components/business-categories'
@@ -34,7 +35,7 @@ const Home: NextPage = () => {
 
       <TestimonialsSection />
 
-      <PricingSection />
+      <Pricing {...pricing} />
 
       <FaqSection />
     </Box>
@@ -42,43 +43,16 @@ const Home: NextPage = () => {
 }
 
 const TestimonialsSection = () => {
-  const columns = React.useMemo(() => {
-    return testimonials.items.reduce<Array<typeof testimonials.items>>(
-      (columns, t, i) => {
-        columns[i % 3].push(t)
-
-        return columns
-      },
-      [[], [], []],
-    )
-  }, [])
-
   return (
     <Testimonials
       title={testimonials.title}
-      columns={[1, 2, 3]}
+      testimonials={testimonials.items}
       innerWidth="container.xl"
-    >
-      <>
-        {columns.map((column, i) => (
-          <Stack key={i} spacing="8">
-            {column.map((t, i) => (
-              <Testimonial key={i} {...t} />
-            ))}
-          </Stack>
-        ))}
-      </>
-    </Testimonials>
-  )
-}
-
-const PricingSection = () => {
-  return (
-    <Pricing {...pricing}>
-      <Text p="8" textAlign="center" color="muted">
-        VAT may be applicable depending on your location.
-      </Text>
-    </Pricing>
+      autoPlay={true}
+      interval={4000}
+      showDots={true}
+      showNavigation={true}
+    />
   )
 }
 
