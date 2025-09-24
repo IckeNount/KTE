@@ -48,9 +48,20 @@ export const Hero: React.FC = () => {
               pb={{ base: '280px', md: '0' }}
             >
               <Text as="h1" textStyle="h1" textAlign="left">
+                <FallInPlace
+                  delay={0.4}
+                  fontWeight="light"
+                  fontSize={{ base: '4px', md: '8px', lg: '12px' }}
+                  letterSpacing={{ base: 'wide', md: 'wider' }}
+                  textTransform="uppercase" // Optional
+                  lineHeight="shorter"
+                >
+                  Teaching, Working, and Traveling Abroad Made Simple.
+                </FallInPlace>
+
                 <FallInPlace>
-                  Global Careers
-                  <Br /> Fully Supported
+                  Launch Your
+                  <Br /> Global Career
                 </FallInPlace>
               </Text>
               <Text
@@ -60,14 +71,9 @@ export const Hero: React.FC = () => {
                 color="gray.500"
                 _dark={{ color: 'gray.400' }}
               >
-                <FallInPlace delay={0.4} fontWeight="medium">
-                  We <Em>connect</Em> you to jobs in
-                  <Br />
-                  Thailand, Europe, and Asia
-                  <Br /> with <Em>full support</Em> on
-                  <Br />
-                  visas, placement, coaching, and relocation.
-                </FallInPlace>
+                KTECCS provides complete support for working abroad,
+                <Br /> from <Em>job placement and legal documentation</Em>
+                <Br /> to housing and personal guidance.
               </Text>
 
               <FallInPlace delay={0.8}>
@@ -170,34 +176,34 @@ export const Hero: React.FC = () => {
         pt="20"
         features={[
           {
-            title: 'Global Teaching Placement',
+            title: 'Professional & Clear',
             icon: FiSmile,
             description:
-              'Teaching jobs in Thailand with visa, permits, coaching, and full relocation support.',
+              'Explore our core services designed to support your journey abroad from job placement to personal well-being.',
             iconPosition: 'left',
             delay: 0.6,
           },
           {
-            title: 'International Workforce Deployment',
+            title: 'Friendly & Inviting',
             icon: FiSliders,
             description:
-              'Industrial job placements in Poland and Germany with legal, housing, and relocation assistance.',
+              'We offer more than jobs. We provide complete support for living, working, and growing overseas.',
             iconPosition: 'left',
             delay: 0.8,
           },
           {
-            title: 'Travel & Visa Solutions',
+            title: 'Global & Confident',
             icon: FiGrid,
             description:
-              'Visa services and travel support for Europe, Korea, Dubai, and custom tour packages.',
+              'Our four core services are built to help you thrive wherever your journey takes you.',
             iconPosition: 'left',
             delay: 1,
           },
           {
-            title: 'Human-Centered Support',
+            title: 'Caring & Human-Centered',
             icon: FiThumbsUp,
             description:
-              'Emergency financial help and lifelong mentorship focused on teacher well-being and growth.',
+              'We focus on people, not just placements. Here is how we support every step of your international path.',
             iconPosition: 'left',
             delay: 1.1,
           },

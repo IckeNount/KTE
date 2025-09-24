@@ -4,6 +4,7 @@
 import { Box, Center, Flex, Grid, Heading, Icon, Text } from '@chakra-ui/react'
 import { keyframes } from '@emotion/react'
 import Image from 'next/image'
+import { RepoTag } from 'public/static/glow-planet/RepoTag'
 
 import { ReactElement } from 'react'
 
@@ -12,6 +13,16 @@ import PlanetTagImg02 from '../../public/static/glow-planet/planet-tag-02.png'
 import PlanetTagImg03 from '../../public/static/glow-planet/planet-tag-03.png'
 import PlanetTagImg04 from '../../public/static/glow-planet/planet-tag-04.png'
 import PlanetImg from '../../public/static/glow-planet/planet.png'
+
+// app/components/CountriesFlag.tsx
+
+// app/components/CountriesFlag.tsx
+
+// app/components/CountriesFlag.tsx
+
+// app/components/CountriesFlag.tsx
+
+// app/components/CountriesFlag.tsx
 
 // app/components/CountriesFlag.tsx
 
@@ -118,7 +129,7 @@ export default function CountriesFlag() {
               fontWeight="bold"
               color="gray.200"
             >
-              Simple helps your teams work more efficiently together
+              Connecting Talent to Opportunities Worldwide
             </Heading>
           </Box>
 
@@ -177,12 +188,18 @@ export default function CountriesFlag() {
                     opacity={0.8}
                     animation={`${float} 4s ease-in-out infinite`}
                   >
-                    <Image
+                    <RepoTag
+                      username="user01"
+                      repoName="repo01"
+                      location="Earth"
+                      avatarUrl="./DB.svg"
+                    />
+                    {/* <Image
                       src={PlanetTagImg01}
                       alt="Tag 01"
                       width={253}
                       height={56}
-                    />
+                    /> */}
                   </Box>
                   <Box
                     position="absolute"
@@ -192,12 +209,12 @@ export default function CountriesFlag() {
                     opacity={0.3}
                     animation={`${float} 4s ease-in-out infinite 1s`}
                   >
-                    <Image
+                    {/* <Image
                       src={PlanetTagImg02}
                       alt="Tag 02"
                       width={241}
                       height={56}
-                    />
+                    /> */}
                   </Box>
                   <Box
                     position="absolute"
@@ -207,12 +224,12 @@ export default function CountriesFlag() {
                     opacity={0.25}
                     animation={`${float} 4s ease-in-out infinite 2s`}
                   >
-                    <Image
+                    {/* <Image
                       src={PlanetTagImg03}
                       alt="Tag 03"
                       width={243}
                       height={56}
-                    />
+                    /> */}
                   </Box>
                   <Box
                     position="absolute"
@@ -222,12 +239,12 @@ export default function CountriesFlag() {
                     opacity={0.8}
                     animation={`${float} 4s ease-in-out infinite 3s`}
                   >
-                    <Image
+                    {/* <Image
                       src={PlanetTagImg04}
                       alt="Tag 04"
                       width={251}
                       height={56}
-                    />
+                    /> */}
                   </Box>
                 </Box>
               </Box>

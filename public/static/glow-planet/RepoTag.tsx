@@ -27,7 +27,7 @@ export const RepoTag: React.FC<RepoTagProps> = ({
       w="fit-content"
       boxShadow="md"
     >
-      <Avatar src={avatarUrl} name={username} size="sm" />
+      <Avatar src="./DB.svg" name={username} size="sm" />
 
       <Box>
         <Text fontWeight="semibold" fontSize="sm" lineHeight="1">
