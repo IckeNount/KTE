@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   HStack,
   Heading,
   Icon,
@@ -10,7 +11,7 @@ import {
 } from '@chakra-ui/react'
 import { FiCheck } from 'react-icons/fi'
 
-import React from 'react'
+import React, { useState } from 'react'
 
 import {
   ButtonLink,
@@ -22,6 +23,7 @@ import { Section, SectionProps, SectionTitle } from '#components/section'
 export interface PricingPlan {
   id: string
   title: React.ReactNode
+  subtitle?: React.ReactNode
   description: React.ReactNode
   price: React.ReactNode
   features: Array<PricingFeatureProps | null>
@@ -48,6 +50,7 @@ export const Pricing: React.FC<PricingProps> = (props) => {
             <PricingBox
               key={plan.id}
               title={plan.title}
+              subtitle={plan.subtitle}
               description={plan.description}
               price={plan.price}
               sx={
@@ -117,14 +120,59 @@ const PricingFeature: React.FC<PricingFeatureProps> = (props) => {
   )
 }
 
+interface CollapsibleDescriptionProps {
+  description: React.ReactNode
+  maxLength?: number
+}
+
+const CollapsibleDescription: React.FC<CollapsibleDescriptionProps> = ({
+  description,
+  maxLength = 120,
+}) => {
+  const [isExpanded, setIsExpanded] = useState(false)
+
+  if (typeof description !== 'string') {
+    return <Box color="muted">{description}</Box>
+  }
+
+  const shouldTruncate = description.length > maxLength
+  const displayText =
+    isExpanded || !shouldTruncate
+      ? description
+      : `${description.slice(0, maxLength)}...`
+
+  return (
+    <Box color="muted">
+      <Text fontSize="sm" mb={shouldTruncate ? 2 : 0}>
+        {displayText}
+      </Text>
+      {shouldTruncate && (
+        <Button
+          variant="link"
+          size="sm"
+          color="primary.500"
+          p={0}
+          h="auto"
+          fontSize="xs"
+          fontWeight="medium"
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          {isExpanded ? 'See less' : 'See more'}
+        </Button>
+      )}
+    </Box>
+  )
+}
+
 export interface PricingBoxProps extends Omit<StackProps, 'title'> {
   title: React.ReactNode
+  subtitle?: React.ReactNode
   description: React.ReactNode
   price: React.ReactNode
 }
 
 const PricingBox: React.FC<PricingBoxProps> = (props) => {
-  const { title, description, price, children, ...rest } = props
+  const { title, subtitle, description, price, children, ...rest } = props
   return (
     <VStack
       zIndex="2"
@@ -144,7 +192,17 @@ const PricingBox: React.FC<PricingBoxProps> = (props) => {
       <Heading as="h3" size="md" fontWeight="bold" fontSize="lg" mb="2">
         {title}
       </Heading>
-      <Box color="muted">{description}</Box>
+      {subtitle && (
+        <Text
+          fontSize="sm"
+          color="gray.600"
+          _dark={{ color: 'gray.400' }}
+          mb="2"
+        >
+          {subtitle}
+        </Text>
+      )}
+      <CollapsibleDescription description={description} />
       <Box fontSize="2xl" fontWeight="bold" py="4">
         {price}
       </Box>
