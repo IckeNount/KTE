@@ -29,13 +29,18 @@ const siteConfig = {
         label: 'FAQ',
       },
       {
+        label: 'Apply',
+        href: '/apply',
+        variant: 'primary',
+      },
+      {
         label: 'Login',
         href: '/login',
       },
       {
         label: 'Sign Up',
         href: '/signup',
-        variant: 'primary',
+        variant: 'outline',
       },
     ],
   },
