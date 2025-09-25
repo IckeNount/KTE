@@ -42,66 +42,120 @@ export const FeaturesSection = () => {
       iconSize={4}
       features={[
         {
-          title: 'Real Human Support.',
+          title: (
+            <>
+              Real Human Support
+              <Br />
+              Every application is handled by a real person who listens, guides,
+              and responds personally.
+            </>
+          ),
           icon: FiBox,
-          description:
-            'Every application is handled by a real person who listens, guides, and responds personally.',
+          description: '',
           variant: 'inline',
         },
         {
-          title: 'Application Review.',
+          title: (
+            <>
+              Application Review
+              <Br />
+              We review your background carefully to match you with the right
+              opportunity and path.
+            </>
+          ),
           icon: FiLock,
-          description:
-            'We review your background carefully to match you with the right opportunity and path.',
+          description: '',
           variant: 'inline',
         },
         {
-          title: 'Career Planning Call.',
+          title: (
+            <>
+              Career Planning Call
+              <Br />
+              Get a one-on-one call to align your goals with the right role and
+              destination.
+            </>
+          ),
           icon: FiSearch,
-          description:
-            'Get a one-on-one call to align your goals with the right role and destination.',
+          description: '',
           variant: 'inline',
         },
         {
-          title: 'School Partner List.',
+          title: (
+            <>
+              School Partner List
+              <Br />
+              Access verified schools and employers with strong reputations and
+              reliable placement histories.
+            </>
+          ),
           icon: FiUserPlus,
-          description:
-            'Access verified schools and employers with strong reputations and reliable placement histories.',
+          description: '',
           variant: 'inline',
         },
         {
-          title: 'Referral Rewards.',
+          title: (
+            <>
+              Referral Rewards
+              <Br />
+              Refer friends and get travel perks, priority placement, or other
+              exclusive benefits when they're hired.
+            </>
+          ),
           icon: FiFlag,
-          description:
-            "Refer friends and get travel perks, priority placement, or other exclusive benefits when they're hired.",
+          description: '',
           variant: 'inline',
         },
         {
-          title: 'Local Expertise.',
+          title: (
+            <>
+              Local Expertise
+              <Br />
+              Our team lives where we work and understands the systems, culture,
+              and legal process.
+            </>
+          ),
           icon: FiTrendingUp,
-          description:
-            'Our team lives where we work and understands the systems, culture, and legal process.',
+          description: '',
           variant: 'inline',
         },
         {
-          title: 'Long-Term Care.',
+          title: (
+            <>
+              Long-Term Care
+              <Br />
+              After placement support with guidance, and access to our growing
+              community.
+            </>
+          ),
           icon: FiToggleLeft,
-          description:
-            'After placement support with guidance, and access to our growing community.',
+          description: '',
           variant: 'inline',
         },
         {
-          title: 'Bridge Loans.',
+          title: (
+            <>
+              Bridge Loans
+              <Br />
+              Quiet financial help is available for emergencies, handled
+              privately with zero pressure or judgment.
+            </>
+          ),
           icon: FiTerminal,
-          description:
-            'Quiet financial help is available for emergencies, handled privately with zero pressure or judgment.',
+          description: '',
           variant: 'inline',
         },
         {
-          title: 'Trusted Reputation.',
+          title: (
+            <>
+              Trusted Reputation
+              <Br />
+              We combine care, professionalism, and real results that speak for
+              themselves.
+            </>
+          ),
           icon: FiCode,
-          description:
-            'We combine care, professionalism, and real results that speak for themselves.',
+          description: '',
           variant: 'inline',
         },
       ]}

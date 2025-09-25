@@ -28,40 +28,58 @@ import { Br, Em } from '../typography'
 
 export const Hero: React.FC = () => {
   return (
-    <Box position="relative" overflow="hidden">
+    <Box position="relative" overflow="hidden" minH="100vh">
       <BackgroundGradient height="100%" zIndex="-1" />
-      <Container maxW="container.xl" pt={{ base: 40, lg: 60 }} pb="40">
-        <Stack direction={{ base: 'column', lg: 'row' }} alignItems="center">
+      <Container
+        maxW="container.2xl"
+        pt={{ base: 20, md: 32, lg: 40 }}
+        pb={{ base: 20, md: 32 }}
+      >
+        <Stack
+          direction={{ base: 'column', lg: 'row' }}
+          alignItems="center"
+          spacing={{ base: 8, md: 12, lg: 16 }}
+          minH={{ base: 'auto', lg: '80vh' }}
+        >
           <Flex
             id="home"
             justifyContent="flex-start"
-            py="20"
             alignItems="center"
             width="100%"
-            px={{ base: 4, md: 0 }}
+            flex={1}
           >
             <VStack
-              spacing={[4, null, 8]}
+              spacing={{ base: 6, md: 8, lg: 10 }}
               alignItems="flex-start"
               width="100%"
-              pr={{ base: 0, md: 0, lg: '20%' }}
-              pb={{ base: '280px', md: '0' }}
+              maxW={{ base: '100%', lg: '90%', xl: '80%' }}
             >
               <Text as="h1" textStyle="h1" textAlign="left">
                 <FallInPlace
                   delay={0.4}
                   fontWeight="light"
-                  fontSize={{ base: '4px', md: '8px', lg: '12px' }}
+                  fontSize={{ base: '8px', md: '12px', lg: '16px' }}
                   letterSpacing={{ base: 'wide', md: 'wider' }}
-                  textTransform="uppercase" // Optional
+                  textTransform="uppercase"
                   lineHeight="shorter"
+                  color="gray.600"
+                  _dark={{ color: 'gray.400' }}
+                  mb={{ base: 2, md: 4 }}
                 >
                   Teaching, Working, and Traveling Abroad Made Simple.
                 </FallInPlace>
 
                 <FallInPlace>
-                  Launch Your
-                  <Br /> Global Career
+                  <Text
+                    fontSize={{ base: '3xl', md: '5xl', lg: '6xl', xl: '7xl' }}
+                    fontWeight="bold"
+                    lineHeight="shorter"
+                    color="gray.900"
+                    _dark={{ color: 'white' }}
+                  >
+                    Launch Your
+                    <Br /> Global Career
+                  </Text>
                 </FallInPlace>
               </Text>
               <Text
@@ -70,6 +88,9 @@ export const Hero: React.FC = () => {
                 align="left"
                 color="gray.500"
                 _dark={{ color: 'gray.400' }}
+                fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
+                lineHeight="relaxed"
+                maxW={{ base: '100%', md: '90%', lg: '85%' }}
               >
                 KTECCS provides complete support for working abroad,
                 <Br /> from <Em>job placement and legal documentation</Em>
@@ -77,21 +98,56 @@ export const Hero: React.FC = () => {
               </Text>
 
               <FallInPlace delay={0.8}>
-                <HStack pt="2" pb="8" spacing="8">
-                  <SvgIcon name="handshake" width="28px" height="28px" />
-                  <SvgIcon name="flight" width="28px" height="28px" />
-                  <SvgIcon name="navigation" width="28px" height="28px" />
-                  <SvgIcon name="education" width="28px" height="28px" />
+                <HStack
+                  pt={{ base: 4, md: 6 }}
+                  pb={{ base: 6, md: 8, lg: 10 }}
+                  spacing={{ base: 6, md: 8, lg: 10 }}
+                  justify={{ base: 'center', md: 'flex-start' }}
+                  w="full"
+                >
+                  <SvgIcon
+                    name="handshake"
+                    width={{ base: '24px', md: '28px', lg: '32px' }}
+                    height={{ base: '24px', md: '28px', lg: '32px' }}
+                  />
+                  <SvgIcon
+                    name="flight"
+                    width={{ base: '24px', md: '28px', lg: '32px' }}
+                    height={{ base: '24px', md: '28px', lg: '32px' }}
+                  />
+                  <SvgIcon
+                    name="navigation"
+                    width={{ base: '24px', md: '28px', lg: '32px' }}
+                    height={{ base: '24px', md: '28px', lg: '32px' }}
+                  />
+                  <SvgIcon
+                    name="education"
+                    width={{ base: '24px', md: '28px', lg: '32px' }}
+                    height={{ base: '24px', md: '28px', lg: '32px' }}
+                  />
                 </HStack>
 
-                <ButtonGroup spacing={4} alignItems="center">
-                  <ButtonLink colorScheme="primary" size="lg" href="/signup">
+                <Stack
+                  direction={{ base: 'column', sm: 'row' }}
+                  spacing={{ base: 3, md: 4, lg: 6 }}
+                  align="center"
+                  w={{ base: 'full', sm: 'auto' }}
+                >
+                  <ButtonLink
+                    colorScheme="primary"
+                    size={{ base: 'md', md: 'lg' }}
+                    href="/signup"
+                    w={{ base: 'full', sm: 'auto' }}
+                    minW={{ base: '200px', sm: 'auto' }}
+                  >
                     Our Services
                   </ButtonLink>
                   <ButtonLink
-                    size="lg"
-                    href="https://demo.saas-ui.dev"
+                    size={{ base: 'md', md: 'lg' }}
+                    href="/apply"
                     variant="outline"
+                    w={{ base: 'full', sm: 'auto' }}
+                    minW={{ base: '200px', sm: 'auto' }}
                     rightIcon={
                       <Icon
                         as={FiArrowRight}
@@ -107,24 +163,24 @@ export const Hero: React.FC = () => {
                   >
                     Apply Now
                   </ButtonLink>
-                </ButtonGroup>
+                </Stack>
               </FallInPlace>
             </VStack>
           </Flex>
 
-          <>
-            {/* Mobile: Lottie in flow */}
+          <Box flex={1} position="relative">
+            {/* Mobile and Tablet: Lottie in flow */}
             <Box
-              display={{ base: 'block', md: 'none' }}
-              pt="12"
-              px="4"
+              display={{ base: 'block', lg: 'none' }}
               width="100%"
               textAlign="center"
+              mt={{ base: 8, md: 0 }}
             >
               <Box
                 mx="auto"
-                width={{ base: '260px', sm: '300px' }}
-                height={{ base: '260px', sm: '300px' }}
+                width={{ base: '280px', sm: '350px', md: '400px' }}
+                height={{ base: '280px', sm: '350px', md: '400px' }}
+                maxW="90vw"
               >
                 <LottiePlayer
                   animationData={globeAnimation}
@@ -136,23 +192,26 @@ export const Hero: React.FC = () => {
               </Box>
             </Box>
 
-            {/* Desktop: Lottie absolutely positioned */}
+            {/* Desktop: Lottie positioned relative to its container */}
             <Box
-              display={{ base: 'none', md: 'block' }}
-              position="absolute"
-              right={200}
-              top="50%"
-              transform="translateY(-55%)"
-              zIndex={0}
-              width="auto"
-              maxW="none"
-              overflow="visible"
-              pointerEvents="none"
+              display={{ base: 'none', lg: 'flex' }}
+              justifyContent="center"
+              alignItems="center"
+              width="100%"
+              height="100%"
+              minH="500px"
             >
               <FallInPlace delay={1}>
                 <Box
-                  width={{ md: '70vw', lg: '60vw', xl: '55vw', '2xl': '50vw' }}
-                  height="auto"
+                  width={{ lg: '500px', xl: '600px', '2xl': '700px' }}
+                  height={{ lg: '500px', xl: '600px', '2xl': '700px' }}
+                  maxW="90%"
+                  maxH="90%"
+                  zIndex={1}
+                  overflow="hidden"
+                  position="relative"
+                  right={{ lg: '-25%', xl: '-25%', '2xl': '-25%' }}
+                  transform="translateX(25%)"
                 >
                   <LottiePlayer
                     animationData={globeAnimation}
@@ -164,52 +223,53 @@ export const Hero: React.FC = () => {
                 </Box>
               </FallInPlace>
             </Box>
-          </>
+          </Box>
         </Stack>
       </Container>
 
-      <Features
-        id="benefits"
-        columns={[1, 2, 4]}
-        iconSize={4}
-        innerWidth="container.xl"
-        pt="20"
-        features={[
-          {
-            title: 'Professional & Clear',
-            icon: FiSmile,
-            description:
-              'Explore our core services designed to support your journey abroad from job placement to personal well-being.',
-            iconPosition: 'left',
-            delay: 0.6,
-          },
-          {
-            title: 'Friendly & Inviting',
-            icon: FiSliders,
-            description:
-              'We offer more than jobs. We provide complete support for living, working, and growing overseas.',
-            iconPosition: 'left',
-            delay: 0.8,
-          },
-          {
-            title: 'Global & Confident',
-            icon: FiGrid,
-            description:
-              'Our four core services are built to help you thrive wherever your journey takes you.',
-            iconPosition: 'left',
-            delay: 1,
-          },
-          {
-            title: 'Caring & Human-Centered',
-            icon: FiThumbsUp,
-            description:
-              'We focus on people, not just placements. Here is how we support every step of your international path.',
-            iconPosition: 'left',
-            delay: 1.1,
-          },
-        ]}
-        reveal={FallInPlace}
-      />
+      <Box pt={{ base: 16, md: 20, lg: 24 }}>
+        <Features
+          id="benefits"
+          columns={{ base: 1, md: 2, lg: 4 }}
+          iconSize={4}
+          innerWidth="container.2xl"
+          features={[
+            {
+              title: 'Professional & Clear',
+              icon: FiSmile,
+              description:
+                'Explore our core services designed to support your journey abroad from job placement to personal well-being.',
+              iconPosition: 'left',
+              delay: 0.6,
+            },
+            {
+              title: 'Friendly & Inviting',
+              icon: FiSliders,
+              description:
+                'We offer more than jobs. We provide complete support for living, working, and growing overseas.',
+              iconPosition: 'left',
+              delay: 0.8,
+            },
+            {
+              title: 'Global & Confident',
+              icon: FiGrid,
+              description:
+                'Our four core services are built to help you thrive wherever your journey takes you.',
+              iconPosition: 'left',
+              delay: 1,
+            },
+            {
+              title: 'Caring & Human-Centered',
+              icon: FiThumbsUp,
+              description:
+                'We focus on people, not just placements. Here is how we support every step of your international path.',
+              iconPosition: 'left',
+              delay: 1.1,
+            },
+          ]}
+          reveal={FallInPlace}
+        />
+      </Box>
     </Box>
   )
 }

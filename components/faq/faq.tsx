@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react'
 import { Section, SectionProps, SectionTitle } from 'components/section'
 import { HiChevronDown as ChevronDownIcon } from 'react-icons/hi'
+
 import { useState } from 'react'
 
 interface FaqCategory {
@@ -109,7 +110,7 @@ export const Faq: React.FC<FaqProps> = (props) => {
                       key={itemIndex}
                       borderTop="1px solid"
                       borderColor="gray.100"
-                      _dark={{ borderColor: 'gray.600' }}
+                      _dark={{ borderColor: 'gray.900' }}
                     >
                       {/* Question Header */}
                       <Box

@@ -24,41 +24,11 @@ import PlanetImg from '../../public/static/glow-planet/planet.png'
 
 // app/components/CountriesFlag.tsx
 
-// app/components/CountriesFlag.tsx
-
-// app/components/CountriesFlag.tsx
-
-// app/components/CountriesFlag.tsx
-
-// app/components/CountriesFlag.tsx
-
-// app/components/CountriesFlag.tsx
-
-// app/components/CountriesFlag.tsx
-
-// app/components/CountriesFlag.tsx
-
-// app/components/CountriesFlag.tsx
-
-// app/components/CountriesFlag.tsx
-
-// app/components/CountriesFlag.tsx
-
-// app/components/CountriesFlag.tsx
-
-// app/components/CountriesFlag.tsx
-
-// app/components/CountriesFlag.tsx
-
 // Float animation keyframe
 const float = keyframes`
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
 `
-
-// app/components/CountriesFlag.tsx
-
-// app/components/CountriesFlag.tsx
 
 const features: { title: string; icon: ReactElement; description: string }[] = [
   {
@@ -197,7 +167,7 @@ export default function CountriesFlag() {
                   <Box
                     position="absolute"
                     left="-7rem"
-                    top="4rem"
+                    top="1rem"
                     zIndex={10}
                     opacity={0.8}
                     animation={`${float} 4s ease-in-out infinite`}
@@ -208,12 +178,20 @@ export default function CountriesFlag() {
                       location="Earth"
                       avatarUrl="./DB.svg"
                     />
-                    {/* <Image
-                      src={PlanetTagImg01}
-                      alt="Tag 01"
-                      width={253}
-                      height={56}
-                    /> */}
+
+                    <RepoTag
+                      username="user01"
+                      repoName="repo01"
+                      location="Earth"
+                      avatarUrl="./DB.svg"
+                    />
+
+                    <RepoTag
+                      username="user01"
+                      repoName="repo01"
+                      location="Earth"
+                      avatarUrl="./DB.svg"
+                    />
                   </Box>
                   <Box
                     position="absolute"
