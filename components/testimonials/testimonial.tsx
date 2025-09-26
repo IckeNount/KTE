@@ -7,16 +7,16 @@ import {
   Heading,
   Stack,
   Text,
-} from "@chakra-ui/react";
-import { Link } from "@saas-ui/react";
-import { FaTwitter } from "react-icons/fa";
+} from '@chakra-ui/react'
+import { Link } from '@saas-ui/react'
+import { FaTwitter } from 'react-icons/fa'
 
 export interface TestimonialProps extends CardProps {
-  name: string;
-  description: React.ReactNode;
-  avatar: string;
-  href?: string;
-  children?: React.ReactNode;
+  name: string
+  description: React.ReactNode
+  avatar: string
+  href?: string
+  children?: React.ReactNode
 }
 
 export const Testimonial = ({
@@ -48,5 +48,5 @@ export const Testimonial = ({
         )}
       </CardBody>
     </Card>
-  );
-};
+  )
+}

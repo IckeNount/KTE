@@ -26,9 +26,6 @@ dependencies:
   '@hookform/resolvers':
     specifier: ^5.2.2
     version: 5.2.2(react-hook-form@7.63.0)
-  '@saas-ui/auth':
-    specifier: ^3.4.0
-    version: 3.4.0(@chakra-ui/react@2.10.1)(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(framer-motion@11.11.1)(react-dom@18.3.1)(react@18.3.1)
   '@saas-ui/react':
     specifier: ^2.9.0
     version: 2.9.0(@chakra-ui/react@2.10.1)(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(framer-motion@11.11.1)(react-dom@18.3.1)(react@18.3.1)
@@ -2525,28 +2522,6 @@ packages:
   /@rushstack/eslint-patch@1.10.4:
     resolution: {integrity: sha512-WJgX9nzTqknM393q1QJDJmoW28kUfEnybeTfVNcNAPnIx210RXm2DiXiHzfNPJNIUUb1tJnz/l4QGtJ30PgWmA==}
     dev: true
-
-  /@saas-ui/auth@3.4.0(@chakra-ui/react@2.10.1)(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(framer-motion@11.11.1)(react-dom@18.3.1)(react@18.3.1):
-    resolution: {integrity: sha512-5Ve++Hqwn0GjVrrQDizGOEZZhDBxUturn/gh6i9ilQs4xN2l7JObPz1twLN519+zB6O3r1gpUHHFeIUDPnWexA==}
-    peerDependencies:
-      '@chakra-ui/react': '>=2.4.9'
-      '@emotion/react': '>=11.0.0'
-      '@emotion/styled': '>=11.0.0'
-      framer-motion: '>=6.0.0'
-      react: '>=18.0.0'
-      react-dom: '>=18.0.0'
-    dependencies:
-      '@chakra-ui/react': 2.10.1(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(@types/react@18.3.11)(framer-motion@11.11.1)(react-dom@18.3.1)(react@18.3.1)
-      '@chakra-ui/utils': 2.2.1(react@18.3.1)
-      '@emotion/react': 11.13.3(@types/react@18.3.11)(react@18.3.1)
-      '@emotion/styled': 11.13.0(@emotion/react@11.13.3)(@types/react@18.3.11)(react@18.3.1)
-      '@saas-ui/core': 2.6.0(@chakra-ui/react@2.10.1)(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(framer-motion@11.11.1)(react-dom@18.3.1)(react@18.3.1)
-      '@saas-ui/forms': 2.7.0(@chakra-ui/react@2.10.1)(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(framer-motion@11.11.1)(react-dom@18.3.1)(react@18.3.1)
-      '@saas-ui/hooks': 2.1.0(@chakra-ui/react@2.10.1)(react@18.3.1)
-      framer-motion: 11.11.1(react-dom@18.3.1)(react@18.3.1)
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
-    dev: false
 
   /@saas-ui/core@2.6.0(@chakra-ui/react@2.10.1)(@emotion/react@11.13.3)(@emotion/styled@11.13.0)(framer-motion@11.11.1)(react-dom@18.3.1)(react@18.3.1):
     resolution: {integrity: sha512-LOxsxgIb2zM5TYdQt/CfSE9Mx8tBD2FOv4IMpMk1LfSFkZvqi40OHJ8mkU3OWMeql6taJVPTjIsfftOQCvO72Q==}

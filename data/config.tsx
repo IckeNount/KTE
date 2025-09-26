@@ -9,7 +9,7 @@ import { Logo } from './logo'
 const siteConfig = {
   logo: Logo,
   seo: {
-    title: 'kteccs - career coaching agency',
+    title: 'kteccs - career coaching services',
     description: 'lunch your career with kteccs',
   } as NextSeoProps,
   termsUrl: '#',
@@ -17,12 +17,8 @@ const siteConfig = {
   header: {
     links: [
       {
-        id: 'features',
-        label: 'Features',
-      },
-      {
-        id: 'pricing',
-        label: 'Pricing',
+        id: 'services',
+        label: 'Services',
       },
       {
         id: 'faq',
@@ -33,21 +29,12 @@ const siteConfig = {
         href: '/apply',
         variant: 'primary',
       },
-      {
-        label: 'Login',
-        href: '/login',
-      },
-      {
-        label: 'Sign Up',
-        href: '/signup',
-        variant: 'outline',
-      },
     ],
   },
   footer: {
     copyright: (
       <>
-        Built by <Link href="mailto:your-email@example.com">Troy</Link>
+        Built by <Link href="mailto:your-email@example.com">Eren</Link>
       </>
     ),
     links: [
@@ -62,34 +49,6 @@ const siteConfig = {
       {
         href: 'https://github.com/your-github',
         label: <FaGithub size="14" />,
-      },
-    ],
-  },
-  signup: {
-    title: 'Start building with us',
-    features: [
-      {
-        icon: FiCheck,
-        title: 'Accessible',
-        description: 'All components strictly follow WAI-ARIA standards.',
-      },
-      {
-        icon: FiCheck,
-        title: 'Themable',
-        description:
-          'Fully customize all components to your brand with theme support and style props.',
-      },
-      {
-        icon: FiCheck,
-        title: 'Composable',
-        description:
-          'Compose components to fit your needs and mix them together to create new ones.',
-      },
-      {
-        icon: FiCheck,
-        title: 'Productive',
-        description:
-          'Designed to reduce boilerplate and fully typed, build your product at speed.',
       },
     ],
   },

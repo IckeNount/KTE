@@ -18,34 +18,34 @@ import React, { useState } from 'react'
 import { BackgroundGradient } from '#components/gradients/background-gradient'
 import { Section, SectionProps, SectionTitle } from '#components/section'
 
-export interface PricingPlan {
+export interface ServicePlan {
   id: string
   title: React.ReactNode
   tags?: string[]
   description: React.ReactNode
   price: React.ReactNode
-  features: Array<PricingFeatureProps | null>
+  features: Array<ServiceFeatureProps | null>
   isRecommended?: boolean
 }
 
-export interface PricingProps extends Omit<SectionProps, 'children'> {
+export interface ServiceProps extends Omit<SectionProps, 'children'> {
   children?: React.ReactNode
   description: React.ReactNode
-  plans: Array<PricingPlan>
+  plans: Array<ServicePlan>
 }
 
-export const Pricing: React.FC<PricingProps> = (props) => {
+export const Service: React.FC<ServiceProps> = (props) => {
   const { children, plans, title, description, ...rest } = props
 
   return (
-    <Section id="pricing" pos="relative" {...rest}>
+    <Section id="services" pos="relative" {...rest}>
       <BackgroundGradient height="100%" />
       <Box zIndex="2" pos="relative">
         <SectionTitle title={title} description={description}></SectionTitle>
 
         <SimpleGrid columns={[1, null, 3]} spacing={4}>
           {plans?.map((plan) => (
-            <PricingBox
+            <ServiceBox
               key={plan.id}
               title={plan.title}
               tags={plan.tags}
@@ -63,16 +63,16 @@ export const Pricing: React.FC<PricingProps> = (props) => {
                   : {}
               }
             >
-              <PricingFeatures>
+              <ServiceFeatures>
                 {plan.features.map((feature, i) =>
                   feature ? (
-                    <PricingFeature key={i} {...feature} />
+                    <ServiceFeature key={i} {...feature} />
                   ) : (
                     <br key={i} />
                   ),
                 )}
-              </PricingFeatures>
-            </PricingBox>
+              </ServiceFeatures>
+            </ServiceBox>
           ))}
         </SimpleGrid>
 
@@ -82,7 +82,7 @@ export const Pricing: React.FC<PricingProps> = (props) => {
   )
 }
 
-const PricingFeatures: React.FC<React.PropsWithChildren<{}>> = ({
+const ServiceFeatures: React.FC<React.PropsWithChildren<{}>> = ({
   children,
 }) => {
   return (
@@ -98,12 +98,12 @@ const PricingFeatures: React.FC<React.PropsWithChildren<{}>> = ({
   )
 }
 
-export interface PricingFeatureProps {
+export interface ServiceFeatureProps {
   title: React.ReactNode
   iconColor?: string
 }
 
-const PricingFeature: React.FC<PricingFeatureProps> = (props) => {
+const ServiceFeature: React.FC<ServiceFeatureProps> = (props) => {
   const { title, iconColor = 'primary.500' } = props
   return (
     <HStack>
@@ -159,14 +159,14 @@ const CollapsibleDescription: React.FC<CollapsibleDescriptionProps> = ({
   )
 }
 
-export interface PricingBoxProps extends Omit<StackProps, 'title'> {
+export interface ServiceBoxProps extends Omit<StackProps, 'title'> {
   title: React.ReactNode
   tags?: string[]
   description: React.ReactNode
   price: React.ReactNode
 }
 
-const PricingBox: React.FC<PricingBoxProps> = (props) => {
+const ServiceBox: React.FC<ServiceBoxProps> = (props) => {
   const { title, tags, description, price, children, ...rest } = props
   return (
     <VStack

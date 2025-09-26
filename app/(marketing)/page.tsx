@@ -5,15 +5,15 @@ import type { NextPage } from 'next'
 
 import * as React from 'react'
 
-import { BusinessCategories } from '#components/business-categories'
+import { TrustFactors } from '#components/TrustFactors'
 import { Faq } from '#components/faq'
-import { FeaturesSection } from '#components/features-section'
+import { OurProcess } from '#components/features'
 // import { FeaturesPlanet } from '#components/feature-planet'
-import { CountriesFlag } from '#components/flags'
+import { Flags } from '#components/flags'
 import { Hero } from '#components/hero'
-import { HighlightsSection } from '#components/highlights-section'
-import { Pricing } from '#components/pricing/pricing'
+import { Service } from '#components/service'
 import { Testimonial, Testimonials } from '#components/testimonials'
+import { agencyProcessSteps, processConfig } from '#data/agency-process'
 import faq from '#data/faq'
 import pricing from '#data/pricing'
 import testimonials from '#data/testimonials'
@@ -23,22 +23,33 @@ const Home: NextPage = () => {
     <Box>
       <Hero />
 
-      <BusinessCategories />
+      <Flags />
 
-      {/* <FeaturesPlanet /> */}
+      <TrustFactors />
 
-      <CountriesFlag />
-
-      <HighlightsSection />
-
-      <FeaturesSection />
+      <OurProcessSection />
 
       <TestimonialsSection />
 
-      <Pricing {...pricing} />
+      <Service {...pricing} />
 
       <FaqSection />
     </Box>
+  )
+}
+
+const OurProcessSection = () => {
+  return (
+    <OurProcess
+      id="services"
+      title={processConfig.title}
+      description={processConfig.description}
+      processes={agencyProcessSteps}
+      gridPattern="features"
+      containerWidth="contentWide"
+      spacing="lg"
+      columns={{ base: 1, md: 2, lg: 4 }}
+    />
   )
 }
 

@@ -5,7 +5,7 @@ import { MotionBox, MotionBoxProps } from './box'
 export const FallInPlace: React.FC<MotionBoxProps & { delay?: number }> = (
   props,
 ) => {
-  const { children, delay = 0.2, ...rest } = props
+  const { children, delay = 0.1, ...rest } = props
   return (
     <MotionBox
       initial={{ scale: 1, opacity: 0, translateY: '20px' }}
@@ -13,7 +13,7 @@ export const FallInPlace: React.FC<MotionBoxProps & { delay?: number }> = (
       transition={{
         type: 'tween',
         ease: 'easeOut',
-        duration: 2,
+        duration: 0.6,
         delay,
       }}
       {...rest}

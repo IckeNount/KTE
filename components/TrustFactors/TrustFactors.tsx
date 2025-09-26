@@ -19,7 +19,7 @@ import {
 } from '#components/highlights'
 import { Em } from '#components/typography'
 
-export const HighlightsSection = () => {
+export const TrustFactors = () => {
   const { value, onCopy, hasCopied } = useClipboard('yarn add @saas-ui/react')
 
   return (

@@ -1,1 +1,1 @@
-export { default as CountriesFlag } from './countries'
+export { default as Flags } from './flags'

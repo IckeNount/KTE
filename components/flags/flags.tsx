@@ -21,7 +21,7 @@ const lineMove = keyframes`
   100% { left: 100%; }
 `
 
-export default function BusinessCategories() {
+export default function Flags() {
   const svgFill = '#3182CE' // Always blue
   const gridLineColor = 'gray.200' // Always light gray for white background
   const blueLineColor = 'blue.500' // Always blue

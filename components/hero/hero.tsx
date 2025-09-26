@@ -56,7 +56,7 @@ export const Hero: React.FC = () => {
             >
               <Text as="h1" textStyle="h1" textAlign="left">
                 <FallInPlace
-                  delay={0.4}
+                  delay={0.1}
                   fontWeight="light"
                   fontSize={{ base: '8px', md: '12px', lg: '16px' }}
                   letterSpacing={{ base: 'wide', md: 'wider' }}
@@ -69,7 +69,7 @@ export const Hero: React.FC = () => {
                   Teaching, Working, and Traveling Abroad Made Simple.
                 </FallInPlace>
 
-                <FallInPlace>
+                <FallInPlace delay={0.2}>
                   <Text
                     fontSize={{ base: '3xl', md: '5xl', lg: '6xl', xl: '7xl' }}
                     fontWeight="bold"
@@ -82,22 +82,24 @@ export const Hero: React.FC = () => {
                   </Text>
                 </FallInPlace>
               </Text>
-              <Text
-                as="div"
-                textStyle="subtitle"
-                align="left"
-                color="gray.500"
-                _dark={{ color: 'gray.400' }}
-                fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
-                lineHeight="relaxed"
-                maxW={{ base: '100%', md: '90%', lg: '85%' }}
-              >
-                KTECCS provides complete support for working abroad,
-                <Br /> from <Em>job placement and legal documentation</Em>
-                <Br /> to housing and personal guidance.
-              </Text>
+              <FallInPlace delay={0.3}>
+                <Text
+                  as="div"
+                  textStyle="subtitle"
+                  align="left"
+                  color="gray.500"
+                  _dark={{ color: 'gray.400' }}
+                  fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
+                  lineHeight="relaxed"
+                  maxW={{ base: '100%', md: '90%', lg: '85%' }}
+                >
+                  KTECCS provides complete support for working abroad,
+                  <Br /> from <Em>job placement and legal documentation</Em>
+                  <Br /> to housing and personal guidance.
+                </Text>
+              </FallInPlace>
 
-              <FallInPlace delay={0.8}>
+              <FallInPlace delay={0.4}>
                 <HStack
                   pt={{ base: 4, md: 6 }}
                   pb={{ base: 6, md: 8, lg: 10 }}
@@ -136,7 +138,7 @@ export const Hero: React.FC = () => {
                   <ButtonLink
                     colorScheme="primary"
                     size={{ base: 'md', md: 'lg' }}
-                    href="/signup"
+                    href="#services"
                     w={{ base: 'full', sm: 'auto' }}
                     minW={{ base: '200px', sm: 'auto' }}
                   >
@@ -170,27 +172,29 @@ export const Hero: React.FC = () => {
 
           <Box flex={1} position="relative">
             {/* Mobile and Tablet: Lottie in flow */}
-            <Box
-              display={{ base: 'block', lg: 'none' }}
-              width="100%"
-              textAlign="center"
-              mt={{ base: 8, md: 0 }}
-            >
+            <FallInPlace delay={0.2}>
               <Box
-                mx="auto"
-                width={{ base: '280px', sm: '350px', md: '400px' }}
-                height={{ base: '280px', sm: '350px', md: '400px' }}
-                maxW="90vw"
+                display={{ base: 'block', lg: 'none' }}
+                width="100%"
+                textAlign="center"
+                mt={{ base: 8, md: 0 }}
               >
-                <LottiePlayer
-                  animationData={globeAnimation}
-                  autoplay
-                  loop
-                  width="100%"
-                  height="100%"
-                />
+                <Box
+                  mx="auto"
+                  width={{ base: '280px', sm: '350px', md: '400px' }}
+                  height={{ base: '280px', sm: '350px', md: '400px' }}
+                  maxW="90vw"
+                >
+                  <LottiePlayer
+                    animationData={globeAnimation}
+                    autoplay
+                    loop
+                    width="100%"
+                    height="100%"
+                  />
+                </Box>
               </Box>
-            </Box>
+            </FallInPlace>
 
             {/* Desktop: Lottie positioned relative to its container */}
             <Box
@@ -201,7 +205,7 @@ export const Hero: React.FC = () => {
               height="100%"
               minH="500px"
             >
-              <FallInPlace delay={1}>
+              <FallInPlace delay={0.2}>
                 <Box
                   width={{ lg: '500px', xl: '600px', '2xl': '700px' }}
                   height={{ lg: '500px', xl: '600px', '2xl': '700px' }}
@@ -240,7 +244,7 @@ export const Hero: React.FC = () => {
               description:
                 'Explore our core services designed to support your journey abroad from job placement to personal well-being.',
               iconPosition: 'left',
-              delay: 0.6,
+              delay: 0.1,
             },
             {
               title: 'Friendly & Inviting',
@@ -248,7 +252,7 @@ export const Hero: React.FC = () => {
               description:
                 'We offer more than jobs. We provide complete support for living, working, and growing overseas.',
               iconPosition: 'left',
-              delay: 0.8,
+              delay: 0.2,
             },
             {
               title: 'Global & Confident',
@@ -256,7 +260,7 @@ export const Hero: React.FC = () => {
               description:
                 'Our four core services are built to help you thrive wherever your journey takes you.',
               iconPosition: 'left',
-              delay: 1,
+              delay: 0.3,
             },
             {
               title: 'Caring & Human-Centered',
@@ -264,7 +268,7 @@ export const Hero: React.FC = () => {
               description:
                 'We focus on people, not just placements. Here is how we support every step of your international path.',
               iconPosition: 'left',
-              delay: 1.1,
+              delay: 0.4,
             },
           ]}
           reveal={FallInPlace}

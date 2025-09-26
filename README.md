@@ -16,7 +16,6 @@ A modern, responsive SaaS landing page built with Next.js and Chakra UI. This pr
 - Feature blocks
 - Testimonials
 - Pricing tables
-- Log in and Sign up pages
 - FAQ
 
 ## Getting Started

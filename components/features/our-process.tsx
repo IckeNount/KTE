@@ -1,23 +1,18 @@
 /**
- * Features Component - Refactored Example
- * =====================================
+ * Our Process Component
+ * =====================
  *
- * This file demonstrates how to refactor existing components to use the new
- * responsive layout style guide. It serves as:
+ * This component displays KTECCS agency's procedures and processes for helping
+ * clients with teaching, working, and traveling abroad. It shows the step-by-step
+ * approach and methodology that makes the agency unique.
  *
- * 1. **Reference Implementation** - Shows proper usage of layout components
- * 2. **Migration Example** - Demonstrates before/after refactoring patterns
- * 3. **Best Practices Guide** - Illustrates TypeScript, validation, and performance optimizations
- * 4. **Feature Display Component** - Renders feature lists with flexible layouts
+ * Key features:
+ * - Displays agency processes in a clear, organized manner
+ * - Uses responsive layout for optimal viewing on all devices
+ * - Supports icons and descriptions for each process step
+ * - Flexible grid patterns and spacing options
+ * - Animation support for engaging user experience
  *
- * Key improvements over the original:
- * - Uses ContentLayout for consistent section structure
- * - Leverages ResponsiveGrid with predefined patterns
- * - Implements standardized spacing system
- * - Adds proper TypeScript validation
- * - Includes error handling and performance optimizations
- *
- * @see components/features/features.tsx - Original implementation
  * @see LAYOUT_STYLE_GUIDE.md - Complete documentation
  */
 import {
@@ -44,7 +39,7 @@ import {
 } from '#components/layout'
 
 // Type for grid patterns that work with SimpleGrid (numeric only)
-type FeatureGridPatterns = Exclude<
+type ProcessGridPatterns = Exclude<
   keyof typeof GRID_PATTERNS,
   'sidebar' | 'sidebarReverse'
 >
@@ -56,12 +51,12 @@ const Revealer: React.FC<{ children: React.ReactNode; delay?: number }> = ({
   return <>{children}</>
 }
 
-export interface FeaturesProps
+export interface OurProcessProps
   extends Omit<SectionTitleProps, 'title' | 'variant' | 'width'>,
-    ThemingProps<'Features'> {
+    ThemingProps<'OurProcess'> {
   title?: React.ReactNode
   description?: React.ReactNode
-  features: Array<FeatureProps>
+  processes: Array<ProcessStepProps>
   columns?: ResponsiveValue<number>
   spacing?: keyof typeof LAYOUT_SPACING
   aside?: React.ReactNode
@@ -69,12 +64,12 @@ export interface FeaturesProps
   reveal?: React.FC<{ children: React.ReactNode; delay?: number }>
   iconSize?: SystemProps['boxSize']
   // Layout guide props
-  gridPattern?: FeatureGridPatterns
+  gridPattern?: ProcessGridPatterns
   sectionSpacing?: keyof typeof LAYOUT_SPACING
   containerWidth?: 'content' | 'contentWide' | 'contentMax' | 'narrow'
 }
 
-export interface FeatureProps {
+export interface ProcessStepProps {
   id?: string | number
   title?: React.ReactNode
   description?: React.ReactNode
@@ -87,15 +82,15 @@ export interface FeatureProps {
 }
 
 /**
- * Feature Component - Individual feature item
+ * Process Step Component - Individual process step item
  *
- * Displays a single feature with icon, title, and description.
+ * Displays a single process step with icon, title, and description.
  * Uses ResponsiveStack for consistent mobile-first responsive behavior.
  *
- * @param props - Feature properties
- * @returns Feature component or null if no title provided
+ * @param props - Process step properties
+ * @returns Process step component or null if no title provided
  */
-export const Feature: React.FC<FeatureProps> = (props) => {
+export const ProcessStep: React.FC<ProcessStepProps> = (props) => {
   const {
     title,
     description,
@@ -106,7 +101,7 @@ export const Feature: React.FC<FeatureProps> = (props) => {
     variant,
   } = props
 
-  const styles = useMultiStyleConfig('Feature', { variant }) || {}
+  const styles = useMultiStyleConfig('ProcessStep', { variant }) || {}
 
   // Determine icon position: use iconPosition prop, fallback to ip prop, default to 'top'
   const position = iconPosition || ip || 'top'
@@ -114,7 +109,7 @@ export const Feature: React.FC<FeatureProps> = (props) => {
 
   // Don't render if no title is provided
   if (!title) {
-    console.warn('Feature component: No title provided')
+    console.warn('ProcessStep component: No title provided')
     return null
   }
 
@@ -140,44 +135,37 @@ export const Feature: React.FC<FeatureProps> = (props) => {
 }
 
 /**
- * Features Component - Refactored to use Layout Style Guide
+ * Our Process Component - Displays KTECCS Agency Procedures
  *
- * A flexible, responsive component for displaying feature lists with icons, titles, and descriptions.
- * This component demonstrates the proper usage of the new layout system for consistent responsive behavior.
- *
- * @features
- * - Consistent responsive behavior using ResponsiveGrid and ContentLayout
- * - Standardized spacing system with predefined values
- * - Flexible grid patterns (features, featuresLarge, etc.)
- * - Optional sidebar/aside support with left/right positioning
- * - Icon positioning options (left or top)
- * - Animation support via reveal prop
- * - Full TypeScript support with proper validation
+ * A flexible, responsive component for displaying the agency's step-by-step process
+ * for helping clients with international opportunities. Shows the methodology and
+ * approach that sets KTECCS apart.
  *
  * @example
  * ```tsx
- * <Features
- *   title="Our Features"
- *   description="What makes us different"
- *   features={[
+ * <OurProcess
+ *   title="How We Help You Succeed"
+ *   description="Our proven process for international placements"
+ *   processes={[
  *     {
- *       id: 'feature-1',
- *       title: 'Fast',
- *       description: 'Lightning fast performance',
- *       icon: FiZap,
+ *       id: 'step-1',
+ *       title: 'Initial Consultation',
+ *       description: 'We start with understanding your goals and background',
+ *       icon: FiUser,
  *       iconPosition: 'left'
- *     }
+ *     },
+ *     // ... more steps
  *   ]}
- *   gridPattern="featuresLarge"
+ *   gridPattern="features"
  *   containerWidth="contentWide"
  * />
  * ```
  */
-export const Features: React.FC<FeaturesProps> = (props) => {
+export const OurProcess: React.FC<OurProcessProps> = (props) => {
   const {
     title,
     description,
-    features,
+    processes,
     columns,
     spacing = 'lg',
     iconSize = 8,
@@ -192,9 +180,9 @@ export const Features: React.FC<FeaturesProps> = (props) => {
   } = props
 
   // Validation
-  if (!features || !Array.isArray(features) || features.length === 0) {
+  if (!processes || !Array.isArray(processes) || processes.length === 0) {
     console.warn(
-      'Features component: No features provided or features is empty',
+      'OurProcess component: No processes provided or processes is empty',
     )
     return null
   }
@@ -222,16 +210,16 @@ export const Features: React.FC<FeaturesProps> = (props) => {
       {...rest}
     >
       <ResponsiveGrid pattern={gridPattern} columns={columns} spacing={spacing}>
-        {features.map((feature, index) => {
-          // Use feature.id if it exists and is truthy, otherwise fallback to index
+        {processes.map((process, index) => {
+          // Use process.id if it exists and is truthy, otherwise fallback to index
           const key =
-            feature.id != null && feature.id !== ''
-              ? String(feature.id)
-              : `feature-${index}`
+            process.id != null && process.id !== ''
+              ? String(process.id)
+              : `process-${index}`
 
           return (
-            <Wrap key={key} delay={feature.delay}>
-              <Feature iconSize={iconSize} {...feature} ip={ip} />
+            <Wrap key={key} delay={process.delay}>
+              <ProcessStep iconSize={iconSize} {...process} ip={ip} />
             </Wrap>
           )
         })}
@@ -241,38 +229,30 @@ export const Features: React.FC<FeaturesProps> = (props) => {
 }
 
 /**
- * USAGE EXAMPLES:
+ * USAGE EXAMPLES FOR KTECCS AGENCY:
  *
- * // Basic usage (uses 'features' grid pattern)
- * <Features
- *   title="Our Features"
- *   description="Explore what makes us different"
- *   features={featureList}
+ * // Basic process overview
+ * <OurProcess
+ *   title="How We Work"
+ *   description="Our step-by-step approach to your success"
+ *   processes={agencyProcessSteps}
  * />
  *
- * // Large feature grid
- * <Features
- *   title="Key Benefits"
- *   features={featureList}
+ * // Detailed process with large grid
+ * <OurProcess
+ *   title="Your Journey With Us"
+ *   processes={detailedProcessSteps}
  *   gridPattern="featuresLarge"
  *   containerWidth="contentWide"
  *   sectionSpacing="sectionLarge"
  * />
  *
- * // With sidebar
- * <Features
- *   title="Features"
- *   features={featureList}
- *   aside={<FeatureSidebar />}
+ * // Process with sidebar information
+ * <OurProcess
+ *   title="Our Methodology"
+ *   processes={methodologySteps}
+ *   aside={<ProcessSidebar />}
  *   asidePosition="left"
- *   spacing="xl"
- * />
- *
- * // Custom columns (overrides pattern)
- * <Features
- *   title="Testimonials as Features"
- *   features={testimonialFeatures}
- *   columns={[1, 2, 4]}
  *   spacing="xl"
  * />
  */
